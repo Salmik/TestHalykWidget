@@ -1,0 +1,69 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name HalykWidget
+import Combine
+import CryptoKit
+import Foundation
+@_exported import HalykWidget
+import OZLivenessSDK
+import Swift
+import UIKit.UIColor
+import UIKit.UIDevice
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers public class CommonInformation {
+  public static let shared: HalykWidget.CommonInformation
+  public var processes: [HalykWidget.Processes] {
+    get
+  }
+  public func setPartnersInfo(login: Swift.String, password: Swift.String, completion: @escaping ([HalykWidget.Processes]?) -> Swift.Void)
+  @objc deinit
+}
+public struct Services : Swift.Decodable {
+  public let processess: [HalykWidget.Processes]?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Processes : Swift.Decodable {
+  public let name: Swift.String?
+  public let link: Swift.String?
+  public let id: Swift.Int?
+  public let auth: Swift.Bool?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum Flow {
+  case onBoarding, authorization, homepage
+  public static func == (a: HalykWidget.Flow, b: HalykWidget.Flow) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_Concurrency.MainActor @preconcurrency public class HalykWidgetController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency public init(url: Swift.String = "https://baas-test.halykbank.kz")
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension HalykWidget.HalykWidgetController : OZLivenessSDK.OZLivenessDelegate {
+  @_Concurrency.MainActor @preconcurrency public func onOZLivenessResult(results: [OZLivenessSDK.OZMedia])
+  @_Concurrency.MainActor @preconcurrency public func onError(status: OZLivenessSDK.OZVerificationStatus?)
+}
+extension HalykWidget.HalykWidgetController {
+  @_Concurrency.MainActor @preconcurrency public func loadRequest(_ request: Foundation.URLRequest)
+}
+extension HalykWidget.HalykWidgetController : WebKit.WKNavigationDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func webView(_ webView: WebKit.WKWebView, didStartProvisionalNavigation navigation: WebKit.WKNavigation!)
+}
+extension HalykWidget.HalykWidgetController {
+  @_Concurrency.MainActor @preconcurrency public func webView(_ webView: WebKit.WKWebView, didReceiveAction action: Swift.String)
+}
+public struct TokenPair : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Constants {
+}
+extension HalykWidget.Flow : Swift.Equatable {}
+extension HalykWidget.Flow : Swift.Hashable {}

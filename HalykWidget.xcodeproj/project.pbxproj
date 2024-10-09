@@ -1,0 +1,916 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 70;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53926831A7C690C095581AFD /* Pods_HalykWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821B32056A7726E76C910CF2 /* Pods_HalykWidget.framework */; };
+		72828BA3BDB450AD781A69AC /* Pods_HalykWidget_HalykWidgetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09467416B279D25466DEB99B /* Pods_HalykWidget_HalykWidgetTests.framework */; };
+		BB0CC1C82C9BEA5800B5121D /* ForenzicConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0CC1C72C9BEA5800B5121D /* ForenzicConfigurator.swift */; };
+		BB0CC1CB2C9BEBD500B5121D /* HalykCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB0CC1CA2C9BEBD500B5121D /* HalykCore */; };
+		BB1E6BA42C52161300A8E41D /* HalykWidgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E6BA32C52161300A8E41D /* HalykWidgetController.swift */; };
+		BB3F67C02C897EFA00A61D68 /* DeviceInfoCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F67BF2C897EFA00A61D68 /* DeviceInfoCollector.swift */; };
+		BB3F67C22C897F2100A61D68 /* RSAWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F67C12C897F2100A61D68 /* RSAWorker.swift */; };
+		BB3F67C52C89809300A61D68 /* MessagingWebViewActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F67C42C89809300A61D68 /* MessagingWebViewActions.swift */; };
+		BB4CE65F2CA17149005618E2 /* forensics.license in Resources */ = {isa = PBXBuildFile; fileRef = BB4CE65E2CA17149005618E2 /* forensics.license */; };
+		BB8903532CB5594800982B1B /* HalykCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB8903522CB5594800982B1B /* HalykCore */; };
+		BB89035B2CB559D200982B1B /* HalykWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */; };
+		BB89035C2CB559D200982B1B /* HalykWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BB8903612CB55E8C00982B1B /* FraudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8903602CB55E8C00982B1B /* FraudData.swift */; };
+		BB8903632CB55FB700982B1B /* MobileSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8903622CB55FB700982B1B /* MobileSDK.xcframework */; };
+		BB8903642CB55FB700982B1B /* MobileSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BB8903622CB55FB700982B1B /* MobileSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BB933AE02C4FC74A0004E7FC /* HalykWidget.docc in Sources */ = {isa = PBXBuildFile; fileRef = BB933ADF2C4FC74A0004E7FC /* HalykWidget.docc */; };
+		BB933AE62C4FC74A0004E7FC /* HalykWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */; };
+		BB933AEB2C4FC74A0004E7FC /* HalykWidgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933AEA2C4FC74A0004E7FC /* HalykWidgetTests.swift */; };
+		BB933AEC2C4FC74A0004E7FC /* HalykWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = BB933ADE2C4FC74A0004E7FC /* HalykWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB9D5DD82CA55DEC0060CEDD /* TimeStampCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5DD72CA55DEC0060CEDD /* TimeStampCalculator.swift */; };
+		BB9D5DDA2CA55E890060CEDD /* TokenPairModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5DD92CA55E890060CEDD /* TokenPairModel.swift */; };
+		BB9D5DDC2CA55EAE0060CEDD /* RootTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5DDB2CA55EAE0060CEDD /* RootTokenModel.swift */; };
+		BB9D5DDE2CA55ED70060CEDD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5DDD2CA55ED70060CEDD /* Constants.swift */; };
+		BB9D5DE02CA55EF40060CEDD /* HalykWidgetAuthorizationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5DDF2CA55EF40060CEDD /* HalykWidgetAuthorizationApi.swift */; };
+		BB9D5DE22CA55FB90060CEDD /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5DE12CA55FB90060CEDD /* NetworkWorker.swift */; };
+		BBAA278E2C5CEC88008AA890 /* MessageWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA278D2C5CEC88008AA890 /* MessageWebView.swift */; };
+		BBE6EB7F2C523CB9003E71B7 /* HalykWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6EB7E2C523CB9003E71B7 /* HalykWidgetViewModel.swift */; };
+		BBF2B2702CAE72BC00DF4494 /* ConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B26F2CAE72BC00DF4494 /* ConstantsApi.swift */; };
+		BBF2B2722CAE7A6000DF4494 /* CommonInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */; };
+		BBF2B2832CAEC1FA00DF4494 /* Dictionaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B2822CAEC1FA00DF4494 /* Dictionaries.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB89035D2CB559D200982B1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB933AD22C4FC74A0004E7FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB933ADA2C4FC74A0004E7FC;
+			remoteInfo = HalykWidget;
+		};
+		BB933AE72C4FC74A0004E7FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB933AD22C4FC74A0004E7FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB933ADA2C4FC74A0004E7FC;
+			remoteInfo = HalykWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BB89035F2CB559D200982B1B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BB89035C2CB559D200982B1B /* HalykWidget.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBCF14002C9B538B0008FF61 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BB8903642CB55FB700982B1B /* MobileSDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		09467416B279D25466DEB99B /* Pods_HalykWidget_HalykWidgetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HalykWidget_HalykWidgetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		821B32056A7726E76C910CF2 /* Pods_HalykWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HalykWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0CC1C72C9BEA5800B5121D /* ForenzicConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForenzicConfigurator.swift; sourceTree = "<group>"; };
+		BB1DBF322CA1E7ED009598E1 /* OZLivenessSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OZLivenessSDK.xcframework; path = Pods/OZLivenessSDK/OZLivenessSDK.xcframework; sourceTree = "<group>"; };
+		BB1DBF342CA1E7ED009598E1 /* TensorFlowLiteC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TensorFlowLiteC.xcframework; path = Pods/TensorFlowLiteC/Frameworks/TensorFlowLiteC.xcframework; sourceTree = "<group>"; };
+		BB1E6BA32C52161300A8E41D /* HalykWidgetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalykWidgetController.swift; sourceTree = "<group>"; };
+		BB3F67BF2C897EFA00A61D68 /* DeviceInfoCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoCollector.swift; sourceTree = "<group>"; };
+		BB3F67C12C897F2100A61D68 /* RSAWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAWorker.swift; sourceTree = "<group>"; };
+		BB3F67C42C89809300A61D68 /* MessagingWebViewActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingWebViewActions.swift; sourceTree = "<group>"; };
+		BB4CE65E2CA17149005618E2 /* forensics.license */ = {isa = PBXFileReference; lastKnownFileType = text; path = forensics.license; sourceTree = "<group>"; };
+		BB8903112CB555D600982B1B /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB8903602CB55E8C00982B1B /* FraudData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FraudData.swift; sourceTree = "<group>"; };
+		BB8903622CB55FB700982B1B /* MobileSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileSDK.xcframework; sourceTree = "<group>"; };
+		BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalykWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB933ADE2C4FC74A0004E7FC /* HalykWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalykWidget.h; sourceTree = "<group>"; };
+		BB933ADF2C4FC74A0004E7FC /* HalykWidget.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HalykWidget.docc; sourceTree = "<group>"; };
+		BB933AE52C4FC74A0004E7FC /* HalykWidgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HalykWidgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB933AEA2C4FC74A0004E7FC /* HalykWidgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalykWidgetTests.swift; sourceTree = "<group>"; };
+		BB9D5DD72CA55DEC0060CEDD /* TimeStampCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStampCalculator.swift; sourceTree = "<group>"; };
+		BB9D5DD92CA55E890060CEDD /* TokenPairModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenPairModel.swift; sourceTree = "<group>"; };
+		BB9D5DDB2CA55EAE0060CEDD /* RootTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTokenModel.swift; sourceTree = "<group>"; };
+		BB9D5DDD2CA55ED70060CEDD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BB9D5DDF2CA55EF40060CEDD /* HalykWidgetAuthorizationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalykWidgetAuthorizationApi.swift; sourceTree = "<group>"; };
+		BB9D5DE12CA55FB90060CEDD /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		BBAA278D2C5CEC88008AA890 /* MessageWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageWebView.swift; sourceTree = "<group>"; };
+		BBE6EB7E2C523CB9003E71B7 /* HalykWidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalykWidgetViewModel.swift; sourceTree = "<group>"; };
+		BBF2B26F2CAE72BC00DF4494 /* ConstantsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsApi.swift; sourceTree = "<group>"; };
+		BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInformation.swift; sourceTree = "<group>"; };
+		BBF2B2822CAEC1FA00DF4494 /* Dictionaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionaries.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BB8903242CB555D700982B1B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BB8903102CB555D600982B1B /* Example */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BB8903122CB555D600982B1B /* Example */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BB8903242CB555D700982B1B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Example; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB89030E2CB555D600982B1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB89035B2CB559D200982B1B /* HalykWidget.framework in Frameworks */,
+				BB8903532CB5594800982B1B /* HalykCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB933AD82C4FC74A0004E7FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53926831A7C690C095581AFD /* Pods_HalykWidget.framework in Frameworks */,
+				BB0CC1CB2C9BEBD500B5121D /* HalykCore in Frameworks */,
+				BB8903632CB55FB700982B1B /* MobileSDK.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB933AE22C4FC74A0004E7FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB933AE62C4FC74A0004E7FC /* HalykWidget.framework in Frameworks */,
+				72828BA3BDB450AD781A69AC /* Pods_HalykWidget_HalykWidgetTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB1E6BA22C5215F900A8E41D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BB1E6BA32C52161300A8E41D /* HalykWidgetController.swift */,
+				BBE6EB7E2C523CB9003E71B7 /* HalykWidgetViewModel.swift */,
+				BBAA278D2C5CEC88008AA890 /* MessageWebView.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BB3F67BD2C897EE000A61D68 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BB3F67BF2C897EFA00A61D68 /* DeviceInfoCollector.swift */,
+				BB3F67C12C897F2100A61D68 /* RSAWorker.swift */,
+				BB0CC1C72C9BEA5800B5121D /* ForenzicConfigurator.swift */,
+				BB9D5DD72CA55DEC0060CEDD /* TimeStampCalculator.swift */,
+				BB9D5DDD2CA55ED70060CEDD /* Constants.swift */,
+				BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */,
+				BB8903602CB55E8C00982B1B /* FraudData.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BB3F67C32C89807D00A61D68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB3F67C42C89809300A61D68 /* MessagingWebViewActions.swift */,
+				BB9D5DD92CA55E890060CEDD /* TokenPairModel.swift */,
+				BB9D5DDB2CA55EAE0060CEDD /* RootTokenModel.swift */,
+				BBF2B2822CAEC1FA00DF4494 /* Dictionaries.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB933AD12C4FC74A0004E7FC = {
+			isa = PBXGroup;
+			children = (
+				BB933ADD2C4FC74A0004E7FC /* HalykWidget */,
+				BB4CE65E2CA17149005618E2 /* forensics.license */,
+				BB933AE92C4FC74A0004E7FC /* HalykWidgetTests */,
+				BB8903122CB555D600982B1B /* Example */,
+				BB933ADC2C4FC74A0004E7FC /* Products */,
+				FB4797215BD599C827301167 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BB933ADC2C4FC74A0004E7FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */,
+				BB933AE52C4FC74A0004E7FC /* HalykWidgetTests.xctest */,
+				BB8903112CB555D600982B1B /* Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB933ADD2C4FC74A0004E7FC /* HalykWidget */ = {
+			isa = PBXGroup;
+			children = (
+				BB9D5DD52CA55D7C0060CEDD /* Network Layer */,
+				BB3F67C32C89807D00A61D68 /* Models */,
+				BB3F67BD2C897EE000A61D68 /* Utils */,
+				BB1E6BA22C5215F900A8E41D /* Modules */,
+				BB933ADE2C4FC74A0004E7FC /* HalykWidget.h */,
+				BB933ADF2C4FC74A0004E7FC /* HalykWidget.docc */,
+			);
+			path = HalykWidget;
+			sourceTree = "<group>";
+		};
+		BB933AE92C4FC74A0004E7FC /* HalykWidgetTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB933AEA2C4FC74A0004E7FC /* HalykWidgetTests.swift */,
+			);
+			path = HalykWidgetTests;
+			sourceTree = "<group>";
+		};
+		BB9D5DD52CA55D7C0060CEDD /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				BB9D5DDF2CA55EF40060CEDD /* HalykWidgetAuthorizationApi.swift */,
+				BBF2B26F2CAE72BC00DF4494 /* ConstantsApi.swift */,
+				BB9D5DE12CA55FB90060CEDD /* NetworkWorker.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		FB4797215BD599C827301167 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB8903622CB55FB700982B1B /* MobileSDK.xcframework */,
+				BB1DBF322CA1E7ED009598E1 /* OZLivenessSDK.xcframework */,
+				BB1DBF342CA1E7ED009598E1 /* TensorFlowLiteC.xcframework */,
+				821B32056A7726E76C910CF2 /* Pods_HalykWidget.framework */,
+				09467416B279D25466DEB99B /* Pods_HalykWidget_HalykWidgetTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BB933AD62C4FC74A0004E7FC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB933AEC2C4FC74A0004E7FC /* HalykWidget.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BB8903102CB555D600982B1B /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB8903252CB555D700982B1B /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				BB89030D2CB555D600982B1B /* Sources */,
+				BB89030E2CB555D600982B1B /* Frameworks */,
+				BB89030F2CB555D600982B1B /* Resources */,
+				BB89035F2CB559D200982B1B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB89035E2CB559D200982B1B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BB8903122CB555D600982B1B /* Example */,
+			);
+			name = Example;
+			packageProductDependencies = (
+				BB8903522CB5594800982B1B /* HalykCore */,
+			);
+			productName = Example;
+			productReference = BB8903112CB555D600982B1B /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB933ADA2C4FC74A0004E7FC /* HalykWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB933AEF2C4FC74A0004E7FC /* Build configuration list for PBXNativeTarget "HalykWidget" */;
+			buildPhases = (
+				D14B977E3B58082DCE2400C4 /* [CP] Check Pods Manifest.lock */,
+				BB933AD62C4FC74A0004E7FC /* Headers */,
+				BB933AD72C4FC74A0004E7FC /* Sources */,
+				BB933AD82C4FC74A0004E7FC /* Frameworks */,
+				BB933AD92C4FC74A0004E7FC /* Resources */,
+				BBCF14002C9B538B0008FF61 /* Embed Frameworks */,
+				1A4E1D30441D8B25F5D42F98 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HalykWidget;
+			productName = HalykWidget;
+			productReference = BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BB933AE42C4FC74A0004E7FC /* HalykWidgetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB933AF22C4FC74A0004E7FC /* Build configuration list for PBXNativeTarget "HalykWidgetTests" */;
+			buildPhases = (
+				AC2FC43A05CBFF0FFAA4713E /* [CP] Check Pods Manifest.lock */,
+				BB933AE12C4FC74A0004E7FC /* Sources */,
+				BB933AE22C4FC74A0004E7FC /* Frameworks */,
+				BB933AE32C4FC74A0004E7FC /* Resources */,
+				58CEF786FD590CE8B8105CE9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB933AE82C4FC74A0004E7FC /* PBXTargetDependency */,
+			);
+			name = HalykWidgetTests;
+			productName = HalykWidgetTests;
+			productReference = BB933AE52C4FC74A0004E7FC /* HalykWidgetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB933AD22C4FC74A0004E7FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					BB8903102CB555D600982B1B = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					BB933ADA2C4FC74A0004E7FC = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					BB933AE42C4FC74A0004E7FC = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = BB933AD52C4FC74A0004E7FC /* Build configuration list for PBXProject "HalykWidget" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB933AD12C4FC74A0004E7FC;
+			packageReferences = (
+				BB0CC1C92C9BEBD500B5121D /* XCRemoteSwiftPackageReference "HalykCore" */,
+			);
+			productRefGroup = BB933ADC2C4FC74A0004E7FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB933ADA2C4FC74A0004E7FC /* HalykWidget */,
+				BB933AE42C4FC74A0004E7FC /* HalykWidgetTests */,
+				BB8903102CB555D600982B1B /* Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB89030F2CB555D600982B1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB933AD92C4FC74A0004E7FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4CE65F2CA17149005618E2 /* forensics.license in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB933AE32C4FC74A0004E7FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A4E1D30441D8B25F5D42F98 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HalykWidget/Pods-HalykWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HalykWidget/Pods-HalykWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HalykWidget/Pods-HalykWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58CEF786FD590CE8B8105CE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HalykWidget-HalykWidgetTests/Pods-HalykWidget-HalykWidgetTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HalykWidget-HalykWidgetTests/Pods-HalykWidget-HalykWidgetTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HalykWidget-HalykWidgetTests/Pods-HalykWidget-HalykWidgetTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC2FC43A05CBFF0FFAA4713E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HalykWidget-HalykWidgetTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D14B977E3B58082DCE2400C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HalykWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB89030D2CB555D600982B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB933AD72C4FC74A0004E7FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB0CC1C82C9BEA5800B5121D /* ForenzicConfigurator.swift in Sources */,
+				BBF2B2722CAE7A6000DF4494 /* CommonInformation.swift in Sources */,
+				BBF2B2832CAEC1FA00DF4494 /* Dictionaries.swift in Sources */,
+				BB1E6BA42C52161300A8E41D /* HalykWidgetController.swift in Sources */,
+				BB933AE02C4FC74A0004E7FC /* HalykWidget.docc in Sources */,
+				BBAA278E2C5CEC88008AA890 /* MessageWebView.swift in Sources */,
+				BBE6EB7F2C523CB9003E71B7 /* HalykWidgetViewModel.swift in Sources */,
+				BB9D5DDA2CA55E890060CEDD /* TokenPairModel.swift in Sources */,
+				BB9D5DE22CA55FB90060CEDD /* NetworkWorker.swift in Sources */,
+				BB3F67C52C89809300A61D68 /* MessagingWebViewActions.swift in Sources */,
+				BB8903612CB55E8C00982B1B /* FraudData.swift in Sources */,
+				BB3F67C22C897F2100A61D68 /* RSAWorker.swift in Sources */,
+				BB9D5DD82CA55DEC0060CEDD /* TimeStampCalculator.swift in Sources */,
+				BB3F67C02C897EFA00A61D68 /* DeviceInfoCollector.swift in Sources */,
+				BBF2B2702CAE72BC00DF4494 /* ConstantsApi.swift in Sources */,
+				BB9D5DE02CA55EF40060CEDD /* HalykWidgetAuthorizationApi.swift in Sources */,
+				BB9D5DDC2CA55EAE0060CEDD /* RootTokenModel.swift in Sources */,
+				BB9D5DDE2CA55ED70060CEDD /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB933AE12C4FC74A0004E7FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB933AEB2C4FC74A0004E7FC /* HalykWidgetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB89035E2CB559D200982B1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB933ADA2C4FC74A0004E7FC /* HalykWidget */;
+			targetProxy = BB89035D2CB559D200982B1B /* PBXContainerItemProxy */;
+		};
+		BB933AE82C4FC74A0004E7FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB933ADA2C4FC74A0004E7FC /* HalykWidget */;
+			targetProxy = BB933AE72C4FC74A0004E7FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BB8903222CB555D700982B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTHC5U3V42;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = salmik.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BB8903232CB555D700982B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTHC5U3V42;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = salmik.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		BB933AED2C4FC74A0004E7FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BB933AEE2C4FC74A0004E7FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BB933AF02C4FC74A0004E7FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = YTHC5U3V42;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = kz.halyk.partner;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB933AF12C4FC74A0004E7FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = YTHC5U3V42;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = kz.halyk.partner;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BB933AF32C4FC74A0004E7FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTHC5U3V42;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = salmik.HalykWidgetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB933AF42C4FC74A0004E7FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTHC5U3V42;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = salmik.HalykWidgetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB8903252CB555D700982B1B /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB8903222CB555D700982B1B /* Debug */,
+				BB8903232CB555D700982B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB933AD52C4FC74A0004E7FC /* Build configuration list for PBXProject "HalykWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB933AED2C4FC74A0004E7FC /* Debug */,
+				BB933AEE2C4FC74A0004E7FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB933AEF2C4FC74A0004E7FC /* Build configuration list for PBXNativeTarget "HalykWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB933AF02C4FC74A0004E7FC /* Debug */,
+				BB933AF12C4FC74A0004E7FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB933AF22C4FC74A0004E7FC /* Build configuration list for PBXNativeTarget "HalykWidgetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB933AF32C4FC74A0004E7FC /* Debug */,
+				BB933AF42C4FC74A0004E7FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB0CC1C92C9BEBD500B5121D /* XCRemoteSwiftPackageReference "HalykCore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Salmik/HalykCore";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB0CC1CA2C9BEBD500B5121D /* HalykCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB0CC1C92C9BEBD500B5121D /* XCRemoteSwiftPackageReference "HalykCore" */;
+			productName = HalykCore;
+		};
+		BB8903522CB5594800982B1B /* HalykCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB0CC1C92C9BEBD500B5121D /* XCRemoteSwiftPackageReference "HalykCore" */;
+			productName = HalykCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BB933AD22C4FC74A0004E7FC /* Project object */;
+}

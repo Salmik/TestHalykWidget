@@ -1,0 +1,15 @@
+{
+  "originHash" : "af5295dc046614f7de4d36aca51ea1a447c58e1266ee69053bd70be401e53f6c",
+  "pins" : [
+    {
+      "identity" : "halykcore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Salmik/HalykCore",
+      "state" : {
+        "branch" : "main",
+        "revision" : "132830804c7092a9594eccfe5135a0a2f0315af5"
+      }
+    }
+  ],
+  "version" : 3
+}
