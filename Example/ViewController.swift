@@ -30,6 +30,10 @@ class ViewController: UIViewController {
         tableView.constrainToEdges(of: view, safe: true)
         stylyze()
         setActions()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         showHalykWidgetPage(with: "https://baas-test.halykbank.kz/auth")
     }
 
@@ -44,10 +48,10 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        CommonInformation.shared.setPartnersInfo(login: "gbdq", password: "1234") { [weak self] processes in
-            guard let processes else { return }
-            self?.processes = processes
-        }
+//        CommonInformation.shared.setPartnersInfo(login: "gbdq", password: "1234") { [weak self] processes in
+//            guard let processes else { return }
+//            self?.processes = processes
+//        }
     }
 
     private func showHalykWidgetPage(with url: String) {

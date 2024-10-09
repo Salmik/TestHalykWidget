@@ -3,19 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53926831A7C690C095581AFD /* Pods_HalykWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821B32056A7726E76C910CF2 /* Pods_HalykWidget.framework */; };
-		72828BA3BDB450AD781A69AC /* Pods_HalykWidget_HalykWidgetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09467416B279D25466DEB99B /* Pods_HalykWidget_HalykWidgetTests.framework */; };
 		BB0CC1C82C9BEA5800B5121D /* ForenzicConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0CC1C72C9BEA5800B5121D /* ForenzicConfigurator.swift */; };
 		BB0CC1CB2C9BEBD500B5121D /* HalykCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB0CC1CA2C9BEBD500B5121D /* HalykCore */; };
 		BB1E6BA42C52161300A8E41D /* HalykWidgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E6BA32C52161300A8E41D /* HalykWidgetController.swift */; };
 		BB3F67C02C897EFA00A61D68 /* DeviceInfoCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F67BF2C897EFA00A61D68 /* DeviceInfoCollector.swift */; };
 		BB3F67C22C897F2100A61D68 /* RSAWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F67C12C897F2100A61D68 /* RSAWorker.swift */; };
 		BB3F67C52C89809300A61D68 /* MessagingWebViewActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F67C42C89809300A61D68 /* MessagingWebViewActions.swift */; };
-		BB4CE65F2CA17149005618E2 /* forensics.license in Resources */ = {isa = PBXBuildFile; fileRef = BB4CE65E2CA17149005618E2 /* forensics.license */; };
 		BB8903532CB5594800982B1B /* HalykCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB8903522CB5594800982B1B /* HalykCore */; };
 		BB89035B2CB559D200982B1B /* HalykWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */; };
 		BB89035C2CB559D200982B1B /* HalykWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -33,6 +30,14 @@
 		BB9D5DE02CA55EF40060CEDD /* HalykWidgetAuthorizationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5DDF2CA55EF40060CEDD /* HalykWidgetAuthorizationApi.swift */; };
 		BB9D5DE22CA55FB90060CEDD /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D5DE12CA55FB90060CEDD /* NetworkWorker.swift */; };
 		BBAA278E2C5CEC88008AA890 /* MessageWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA278D2C5CEC88008AA890 /* MessageWebView.swift */; };
+		BBD17DFF2CB65AAE00FCE09C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DFB2CB65AAE00FCE09C /* SceneDelegate.swift */; };
+		BBD17E002CB65AAE00FCE09C /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DF92CB65AAE00FCE09C /* BaseCell.swift */; };
+		BBD17E012CB65AAE00FCE09C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DF42CB65AAE00FCE09C /* AppDelegate.swift */; };
+		BBD17E022CB65AAE00FCE09C /* TableViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DFC2CB65AAE00FCE09C /* TableViewConfigurator.swift */; };
+		BBD17E032CB65AAE00FCE09C /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DFD2CB65AAE00FCE09C /* TextFieldView.swift */; };
+		BBD17E042CB65AAE00FCE09C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DFE2CB65AAE00FCE09C /* ViewController.swift */; };
+		BBD17E052CB65AAE00FCE09C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD17DF72CB65AAE00FCE09C /* LaunchScreen.storyboard */; };
+		BBD17E062CB65AAE00FCE09C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD17DF52CB65AAE00FCE09C /* Assets.xcassets */; };
 		BBE6EB7F2C523CB9003E71B7 /* HalykWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6EB7E2C523CB9003E71B7 /* HalykWidgetViewModel.swift */; };
 		BBF2B2702CAE72BC00DF4494 /* ConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B26F2CAE72BC00DF4494 /* ConstantsApi.swift */; };
 		BBF2B2722CAE7A6000DF4494 /* CommonInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */; };
@@ -82,8 +87,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		09467416B279D25466DEB99B /* Pods_HalykWidget_HalykWidgetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HalykWidget_HalykWidgetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		821B32056A7726E76C910CF2 /* Pods_HalykWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HalykWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0CC1C72C9BEA5800B5121D /* ForenzicConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForenzicConfigurator.swift; sourceTree = "<group>"; };
 		BB1DBF322CA1E7ED009598E1 /* OZLivenessSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OZLivenessSDK.xcframework; path = Pods/OZLivenessSDK/OZLivenessSDK.xcframework; sourceTree = "<group>"; };
 		BB1DBF342CA1E7ED009598E1 /* TensorFlowLiteC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TensorFlowLiteC.xcframework; path = Pods/TensorFlowLiteC/Frameworks/TensorFlowLiteC.xcframework; sourceTree = "<group>"; };
@@ -91,7 +94,6 @@
 		BB3F67BF2C897EFA00A61D68 /* DeviceInfoCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoCollector.swift; sourceTree = "<group>"; };
 		BB3F67C12C897F2100A61D68 /* RSAWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAWorker.swift; sourceTree = "<group>"; };
 		BB3F67C42C89809300A61D68 /* MessagingWebViewActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingWebViewActions.swift; sourceTree = "<group>"; };
-		BB4CE65E2CA17149005618E2 /* forensics.license */ = {isa = PBXFileReference; lastKnownFileType = text; path = forensics.license; sourceTree = "<group>"; };
 		BB8903112CB555D600982B1B /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8903602CB55E8C00982B1B /* FraudData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FraudData.swift; sourceTree = "<group>"; };
 		BB8903622CB55FB700982B1B /* MobileSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileSDK.xcframework; sourceTree = "<group>"; };
@@ -107,25 +109,19 @@
 		BB9D5DDF2CA55EF40060CEDD /* HalykWidgetAuthorizationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalykWidgetAuthorizationApi.swift; sourceTree = "<group>"; };
 		BB9D5DE12CA55FB90060CEDD /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		BBAA278D2C5CEC88008AA890 /* MessageWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageWebView.swift; sourceTree = "<group>"; };
+		BBD17DF42CB65AAE00FCE09C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BBD17DF52CB65AAE00FCE09C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBD17DF62CB65AAE00FCE09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BBD17DF92CB65AAE00FCE09C /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		BBD17DFB2CB65AAE00FCE09C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BBD17DFC2CB65AAE00FCE09C /* TableViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewConfigurator.swift; sourceTree = "<group>"; };
+		BBD17DFD2CB65AAE00FCE09C /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		BBD17DFE2CB65AAE00FCE09C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBE6EB7E2C523CB9003E71B7 /* HalykWidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalykWidgetViewModel.swift; sourceTree = "<group>"; };
 		BBF2B26F2CAE72BC00DF4494 /* ConstantsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsApi.swift; sourceTree = "<group>"; };
 		BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInformation.swift; sourceTree = "<group>"; };
 		BBF2B2822CAEC1FA00DF4494 /* Dictionaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionaries.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		BB8903242CB555D700982B1B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = BB8903102CB555D600982B1B /* Example */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		BB8903122CB555D600982B1B /* Example */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BB8903242CB555D700982B1B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Example; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BB89030E2CB555D600982B1B /* Frameworks */ = {
@@ -141,7 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53926831A7C690C095581AFD /* Pods_HalykWidget.framework in Frameworks */,
 				BB0CC1CB2C9BEBD500B5121D /* HalykCore in Frameworks */,
 				BB8903632CB55FB700982B1B /* MobileSDK.xcframework in Frameworks */,
 			);
@@ -152,7 +147,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB933AE62C4FC74A0004E7FC /* HalykWidget.framework in Frameworks */,
-				72828BA3BDB450AD781A69AC /* Pods_HalykWidget_HalykWidgetTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,11 +188,25 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BB8903122CB555D600982B1B /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				BBD17DF42CB65AAE00FCE09C /* AppDelegate.swift */,
+				BBD17DF52CB65AAE00FCE09C /* Assets.xcassets */,
+				BBD17DF82CB65AAE00FCE09C /* Base.lproj */,
+				BBD17DF92CB65AAE00FCE09C /* BaseCell.swift */,
+				BBD17DFB2CB65AAE00FCE09C /* SceneDelegate.swift */,
+				BBD17DFC2CB65AAE00FCE09C /* TableViewConfigurator.swift */,
+				BBD17DFD2CB65AAE00FCE09C /* TextFieldView.swift */,
+				BBD17DFE2CB65AAE00FCE09C /* ViewController.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		BB933AD12C4FC74A0004E7FC = {
 			isa = PBXGroup;
 			children = (
 				BB933ADD2C4FC74A0004E7FC /* HalykWidget */,
-				BB4CE65E2CA17149005618E2 /* forensics.license */,
 				BB933AE92C4FC74A0004E7FC /* HalykWidgetTests */,
 				BB8903122CB555D600982B1B /* Example */,
 				BB933ADC2C4FC74A0004E7FC /* Products */,
@@ -247,14 +255,20 @@
 			path = "Network Layer";
 			sourceTree = "<group>";
 		};
+		BBD17DF82CB65AAE00FCE09C /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				BBD17DF72CB65AAE00FCE09C /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
 		FB4797215BD599C827301167 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				BB8903622CB55FB700982B1B /* MobileSDK.xcframework */,
 				BB1DBF322CA1E7ED009598E1 /* OZLivenessSDK.xcframework */,
 				BB1DBF342CA1E7ED009598E1 /* TensorFlowLiteC.xcframework */,
-				821B32056A7726E76C910CF2 /* Pods_HalykWidget.framework */,
-				09467416B279D25466DEB99B /* Pods_HalykWidget_HalykWidgetTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,9 +301,6 @@
 			dependencies = (
 				BB89035E2CB559D200982B1B /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				BB8903122CB555D600982B1B /* Example */,
-			);
 			name = Example;
 			packageProductDependencies = (
 				BB8903522CB5594800982B1B /* HalykCore */,
@@ -302,13 +313,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB933AEF2C4FC74A0004E7FC /* Build configuration list for PBXNativeTarget "HalykWidget" */;
 			buildPhases = (
-				D14B977E3B58082DCE2400C4 /* [CP] Check Pods Manifest.lock */,
 				BB933AD62C4FC74A0004E7FC /* Headers */,
 				BB933AD72C4FC74A0004E7FC /* Sources */,
 				BB933AD82C4FC74A0004E7FC /* Frameworks */,
 				BB933AD92C4FC74A0004E7FC /* Resources */,
 				BBCF14002C9B538B0008FF61 /* Embed Frameworks */,
-				1A4E1D30441D8B25F5D42F98 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,11 +332,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB933AF22C4FC74A0004E7FC /* Build configuration list for PBXNativeTarget "HalykWidgetTests" */;
 			buildPhases = (
-				AC2FC43A05CBFF0FFAA4713E /* [CP] Check Pods Manifest.lock */,
 				BB933AE12C4FC74A0004E7FC /* Sources */,
 				BB933AE22C4FC74A0004E7FC /* Frameworks */,
 				BB933AE32C4FC74A0004E7FC /* Resources */,
-				58CEF786FD590CE8B8105CE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -351,6 +358,7 @@
 				TargetAttributes = {
 					BB8903102CB555D600982B1B = {
 						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
 					};
 					BB933ADA2C4FC74A0004E7FC = {
 						CreatedOnToolsVersion = 15.3;
@@ -388,6 +396,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD17E052CB65AAE00FCE09C /* LaunchScreen.storyboard in Resources */,
+				BBD17E062CB65AAE00FCE09C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +405,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB4CE65F2CA17149005618E2 /* forensics.license in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,92 +417,17 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1A4E1D30441D8B25F5D42F98 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HalykWidget/Pods-HalykWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HalykWidget/Pods-HalykWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HalykWidget/Pods-HalykWidget-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		58CEF786FD590CE8B8105CE9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HalykWidget-HalykWidgetTests/Pods-HalykWidget-HalykWidgetTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HalykWidget-HalykWidgetTests/Pods-HalykWidget-HalykWidgetTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HalykWidget-HalykWidgetTests/Pods-HalykWidget-HalykWidgetTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AC2FC43A05CBFF0FFAA4713E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HalykWidget-HalykWidgetTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D14B977E3B58082DCE2400C4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HalykWidget-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		BB89030D2CB555D600982B1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD17DFF2CB65AAE00FCE09C /* SceneDelegate.swift in Sources */,
+				BBD17E002CB65AAE00FCE09C /* BaseCell.swift in Sources */,
+				BBD17E012CB65AAE00FCE09C /* AppDelegate.swift in Sources */,
+				BBD17E022CB65AAE00FCE09C /* TableViewConfigurator.swift in Sources */,
+				BBD17E032CB65AAE00FCE09C /* TextFieldView.swift in Sources */,
+				BBD17E042CB65AAE00FCE09C /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,12 +479,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		BBD17DF72CB65AAE00FCE09C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBD17DF62CB65AAE00FCE09C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		BB8903222CB555D700982B1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YTHC5U3V42;
@@ -573,6 +519,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -583,6 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YTHC5U3V42;
