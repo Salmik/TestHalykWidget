@@ -27,6 +27,24 @@ struct DeviceInfoCollector {
         return formatter.string(from: date)
     }
 
+    private static func reduceTo16Bytes(hash: String) -> String {
+        let hashBytes = stride(from: 0, to: hash.count, by: 2).compactMap { index -> UInt8? in
+            let start = hash.index(hash.startIndex, offsetBy: index)
+            let end = hash.index(start, offsetBy: 2)
+            let byteString = String(hash[start..<end])
+            return UInt8(byteString, radix: 16)
+        }
+
+        var reducedHash = [UInt8](repeating: 0, count: 16)
+
+        for (i, byte) in hashBytes.enumerated() {
+            let index = i % 16
+            reducedHash[index] ^= byte
+        }
+
+        return reducedHash.map { String(format: "%02x", $0) }.joined(separator: ":")
+    }
+
     static func deviceInfoHash() -> String {
         let osName = UIDevice.current.systemName
         let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? ""
@@ -45,15 +63,9 @@ struct DeviceInfoCollector {
             deviceID
         ].joined(separator: "|")
 
-        let hashData = CryptoKit.SHA256.hash(data: Data(combinedString.utf8))
-        let byteArray = Array(hashData)
-        let chunkedData = stride(from: 0, to: byteArray.count, by: 8).map { startIndex in
-            Array(byteArray[startIndex..<min(startIndex + 8, byteArray.count)])
-        }
-        let reducedHash = chunkedData.map { chunk in
-            chunk.reduce("") { $0 + String(format: "%02x", $1) }
-        }
+        let hashData = SHA256.hash(data: Data(combinedString.utf8))
+        let hashString = hashData.compactMap { String(format: "%02x", $0) }.joined()
 
-        return reducedHash.joined(separator: ":")
+        return reduceTo16Bytes(hash: hashString)
     }
 }

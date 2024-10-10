@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB0CC1C82C9BEA5800B5121D /* ForenzicConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0CC1C72C9BEA5800B5121D /* ForenzicConfigurator.swift */; };
 		BB0CC1CB2C9BEBD500B5121D /* HalykCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB0CC1CA2C9BEBD500B5121D /* HalykCore */; };
 		BB1E6BA42C52161300A8E41D /* HalykWidgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E6BA32C52161300A8E41D /* HalykWidgetController.swift */; };
 		BB3F67C02C897EFA00A61D68 /* DeviceInfoCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F67BF2C897EFA00A61D68 /* DeviceInfoCollector.swift */; };
@@ -38,6 +37,7 @@
 		BBD17E042CB65AAE00FCE09C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DFE2CB65AAE00FCE09C /* ViewController.swift */; };
 		BBD17E052CB65AAE00FCE09C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD17DF72CB65AAE00FCE09C /* LaunchScreen.storyboard */; };
 		BBD17E062CB65AAE00FCE09C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD17DF52CB65AAE00FCE09C /* Assets.xcassets */; };
+		BBD376DB2CB6AD48003613A7 /* ForenzicConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD376DA2CB6AD48003613A7 /* ForenzicConfigurator.swift */; };
 		BBE6EB7F2C523CB9003E71B7 /* HalykWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6EB7E2C523CB9003E71B7 /* HalykWidgetViewModel.swift */; };
 		BBF2B2702CAE72BC00DF4494 /* ConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B26F2CAE72BC00DF4494 /* ConstantsApi.swift */; };
 		BBF2B2722CAE7A6000DF4494 /* CommonInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */; };
@@ -87,7 +87,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BB0CC1C72C9BEA5800B5121D /* ForenzicConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForenzicConfigurator.swift; sourceTree = "<group>"; };
 		BB1DBF322CA1E7ED009598E1 /* OZLivenessSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OZLivenessSDK.xcframework; path = Pods/OZLivenessSDK/OZLivenessSDK.xcframework; sourceTree = "<group>"; };
 		BB1DBF342CA1E7ED009598E1 /* TensorFlowLiteC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TensorFlowLiteC.xcframework; path = Pods/TensorFlowLiteC/Frameworks/TensorFlowLiteC.xcframework; sourceTree = "<group>"; };
 		BB1E6BA32C52161300A8E41D /* HalykWidgetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalykWidgetController.swift; sourceTree = "<group>"; };
@@ -117,6 +116,7 @@
 		BBD17DFC2CB65AAE00FCE09C /* TableViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewConfigurator.swift; sourceTree = "<group>"; };
 		BBD17DFD2CB65AAE00FCE09C /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		BBD17DFE2CB65AAE00FCE09C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BBD376DA2CB6AD48003613A7 /* ForenzicConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForenzicConfigurator.swift; sourceTree = "<group>"; };
 		BBE6EB7E2C523CB9003E71B7 /* HalykWidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalykWidgetViewModel.swift; sourceTree = "<group>"; };
 		BBF2B26F2CAE72BC00DF4494 /* ConstantsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsApi.swift; sourceTree = "<group>"; };
 		BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInformation.swift; sourceTree = "<group>"; };
@@ -166,13 +166,13 @@
 		BB3F67BD2C897EE000A61D68 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BBD376DA2CB6AD48003613A7 /* ForenzicConfigurator.swift */,
 				BB3F67BF2C897EFA00A61D68 /* DeviceInfoCollector.swift */,
+				BB8903602CB55E8C00982B1B /* FraudData.swift */,
 				BB3F67C12C897F2100A61D68 /* RSAWorker.swift */,
-				BB0CC1C72C9BEA5800B5121D /* ForenzicConfigurator.swift */,
 				BB9D5DD72CA55DEC0060CEDD /* TimeStampCalculator.swift */,
 				BB9D5DDD2CA55ED70060CEDD /* Constants.swift */,
 				BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */,
-				BB8903602CB55E8C00982B1B /* FraudData.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -435,7 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB0CC1C82C9BEA5800B5121D /* ForenzicConfigurator.swift in Sources */,
+				BBD376DB2CB6AD48003613A7 /* ForenzicConfigurator.swift in Sources */,
 				BBF2B2722CAE7A6000DF4494 /* CommonInformation.swift in Sources */,
 				BBF2B2832CAEC1FA00DF4494 /* Dictionaries.swift in Sources */,
 				BB1E6BA42C52161300A8E41D /* HalykWidgetController.swift in Sources */,

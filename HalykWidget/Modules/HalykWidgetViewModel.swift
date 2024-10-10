@@ -31,25 +31,16 @@ class HalykWidgetViewModel {
     func sendInitialPayload(webView: WKWebView) {
         let safeAreaTop = UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0
         let safeAreaBottom = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
-        let authToken = "вашAuthToken"
-        let phone = "вашPhone"
-        let iin = "вашIIN"
-        let fraudData = "Test"
+        let fraudData = fraudManager.makeFraudData()
         let page = "HomePage"
 
         let safePartnerToken = CommonInformation.shared.partnersToken?.replacingOccurrences(of: "'", with: "\\'") ?? ""
-        let safeAuthToken = authToken.replacingOccurrences(of: "'", with: "\\'")
-        let safePhone = phone.replacingOccurrences(of: "'", with: "\\'")
-        let safeIin = iin.replacingOccurrences(of: "'", with: "\\'")
         let safeFraudData = fraudData
         let safePage = page.replacingOccurrences(of: "'", with: "\\'")
 
         let script = """
         window.HalykWidget = {
             partnerToken: '\(safePartnerToken)',
-            authToken: '\(safeAuthToken)',
-            phone: '\(safePhone)',
-            iin: '\(safeIin)',
             fraudData: '\(safeFraudData)',
             top: \(safeAreaTop),
             bottom: \(safeAreaBottom),
@@ -63,7 +54,6 @@ class HalykWidgetViewModel {
                 Logger.print("JavaScript error: \(error.localizedDescription)")
             } else {
                 self?.isFirstPage = false
-                Logger.print("Updated info")
             }
         }
     }

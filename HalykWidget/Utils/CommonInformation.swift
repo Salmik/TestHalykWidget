@@ -39,7 +39,7 @@ public class CommonInformation {
         }
     }
 
-    public func logout() { clearCache(for: "https://baas-test.halykbank.kz") }
+    public func logout() { clearCache(for: "baas-test.halykbank.kz") }
 
     public func setPartnersInfo(login: String, password: String, completion: @escaping ([Processes]?) -> Void) {
         Task(priority: .userInitiated) {

@@ -16,11 +16,13 @@ public class HalykWidgetController: UIViewController {
 
     private let webView = MessageWebView()
     private let viewModel = HalykWidgetViewModel()
+    private var ozLivenessVC: UIViewController?
     private var url: String
 
     public init(url: String = "https://baas-test.halykbank.kz") {
         self.url = url
         super.init(nibName: nil, bundle: nil)
+        // ForenzicConfigurator.configure()
     }
 
     override public func viewDidLoad() {
@@ -29,6 +31,7 @@ public class HalykWidgetController: UIViewController {
         setupUI()
         bindViewModel()
         viewModel.prepareRequest(with: url)
+        CommonInformation.shared.logout()
     }
 
     private func setupUI() {
@@ -93,7 +96,7 @@ extension HalykWidgetController: HalykWidgetViewModelViewDelegate {
 extension HalykWidgetController: WKNavigationDelegate {
 
     // swiftlint:disable implicitly_unwrapped_optional
-    public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if !viewModel.isFirstPage {
             viewModel.sendInitialPayload(webView: webView)
             viewModel.isFirstPage = true
