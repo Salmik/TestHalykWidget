@@ -1,0 +1,34 @@
+PODS:
+  - OZLivenessSDK (8.12.1):
+    - OZLivenessSDK/Full (= 8.12.1)
+    - TensorFlowLiteC (= 2.11.0)
+  - OZLivenessSDK/Full (8.12.1):
+    - TensorFlowLiteC (= 2.11.0)
+  - TensorFlowLiteC (2.11.0):
+    - TensorFlowLiteC/Core (= 2.11.0)
+  - TensorFlowLiteC/Core (2.11.0)
+
+DEPENDENCIES:
+  - OZLivenessSDK (from `https://gitlab.com/oz-forensics/oz-liveness-ios.git`, branch `master`)
+
+SPEC REPOS:
+  trunk:
+    - TensorFlowLiteC
+
+EXTERNAL SOURCES:
+  OZLivenessSDK:
+    :branch: master
+    :git: https://gitlab.com/oz-forensics/oz-liveness-ios.git
+
+CHECKOUT OPTIONS:
+  OZLivenessSDK:
+    :commit: 28bb5f04ba4134b2633963c75cd5e3ce077f27ff
+    :git: https://gitlab.com/oz-forensics/oz-liveness-ios.git
+
+SPEC CHECKSUMS:
+  OZLivenessSDK: 164b0cf3beccbc7bb3a89967d1f48c9d4c6f10d1
+  TensorFlowLiteC: 8a8cb6fa20ad74dff29b5e490d02c36a14d48148
+
+PODFILE CHECKSUM: a79a96de40348b0735023e5170aa327841a92f5e
+
+COCOAPODS: 1.15.2

@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
 
         view.addSubview(tableView)
-        tableView.constrainToEdges(of: view, safe: true)
+        tableView.constraintToEdges(of: view, safe: true)
         stylyze()
         setActions()
     }

@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import OZLivenessSDK
 internal import HalykCore
 
 protocol HalykWidgetViewModelViewDelegate: AnyObject {
@@ -73,34 +74,32 @@ class HalykWidgetViewModel {
         }
     }
 
-//    func analyzeDeviceLiveness(results: [OZMedia], completion: @escaping ([UIImage]) -> Void) {
-//        let analysisRequest = AnalysisRequestBuilder()
-//        let analysis = Analysis.init(media: results, type: .quality, mode: .onDevice)
-//        analysisRequest.addAnalysis(analysis)
-//
-//        analysisRequest.run { status in
-//            print(status.status)
-//        } errorHandler: { error in
-//            print(error.localizedDescription)
-//        } completionHandler: { [weak self] results in
-//            var urls: [URL] = []
-//            var images: [UIImage] = []
-//            results.analysisResults.forEach { res in
-//                res.resultsMedia.forEach { media in
-//                    if let url = media.media.bestShotURL {
-//                        urls.append(url)
-//                    }
-//                }
-//            }
-//            urls.forEach { url in
-//                guard let data = try? Data(contentsOf: url), let image = UIImage(data: data) else { return }
-//                images.append(image)
-//            }
-//            completion(images)
-//        }
-//    }
+    func analyzeDeviceLiveness(results: [OZMedia], completion: @escaping ([UIImage]) -> Void) {
+        let analysisRequest = AnalysisRequestBuilder()
+        let analysis = Analysis.init(media: results, type: .quality, mode: .onDevice)
+        analysisRequest.addAnalysis(analysis)
 
-    func makeMultiPartRequest() {
-        // Реализация многосегментного запроса
+        analysisRequest.run { status in
+            print(status.status)
+        } errorHandler: { error in
+            print(error.localizedDescription)
+        } completionHandler: { results in
+            var urls: [URL] = []
+            var images: [UIImage] = []
+            results.analysisResults.forEach { res in
+                res.resultsMedia.forEach { media in
+                    if let url = media.media.bestShotURL {
+                        urls.append(url)
+                    }
+                }
+            }
+            urls.forEach { url in
+                guard let data = try? Data(contentsOf: url), let image = UIImage(data: data) else { return }
+                images.append(image)
+            }
+            completion(images)
+        }
     }
+
+    func makeMultiPartRequest() {}
 }

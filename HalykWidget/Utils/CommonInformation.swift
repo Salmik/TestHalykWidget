@@ -15,10 +15,11 @@ public class CommonInformation {
     private let networkWorker = NetworkWorker()
     private init() {}
 
+    // Parnters info
     var partnerUserName = ""
     var partnerPassword = ""
-
     var partnersToken: String?
+
     var serverTime: String?
     var publicKey: String?
     var rootToken: String?
@@ -39,13 +40,17 @@ public class CommonInformation {
         }
     }
 
-    public func logout() { clearCache(for: "baas-test.halykbank.kz") }
+    public func logout() {
+        clearCache(for: "baas-test.halykbank.kz")
+        let _ = try? KeychainService().delete(key: KeychainKeys.rootToken)
+    }
 
     public func setPartnersInfo(login: String, password: String, completion: @escaping ([Processes]?) -> Void) {
         Task(priority: .userInitiated) {
-            self.partnersToken = await networkWorker.getPartnerToken(login: login, password: password)
-            self.rootToken = await networkWorker.getRootToken()
-            self.tokenPair = await networkWorker.getTokenPair()
+            CommonInformation.shared.partnerUserName = login
+            CommonInformation.shared.partnerPassword = password
+
+            await networkWorker.getTokenPair()
 
             if let dictionaries = await networkWorker.getServices() {
                 DispatchQueue.main.async {
