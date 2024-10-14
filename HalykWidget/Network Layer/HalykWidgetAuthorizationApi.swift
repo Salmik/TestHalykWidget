@@ -15,6 +15,7 @@ enum HalykWidgetAuthorizationApi: EndPointProtocol {
     case serverTime
     case partnerToken(login: String, password: String)
     case tokenPair(body: TokenPairBody, partnerToken: String)
+    case sendLivenessVideo(accessToken: String)
 
     var baseURL: String { Constants.baseUrl }
 
@@ -25,6 +26,7 @@ enum HalykWidgetAuthorizationApi: EndPointProtocol {
         case .rootToken: return "/auth/api/v1/token/root"
         case .publicKey: return "/auth/api/v1/publickey"
         case .tokenPair: return "/auth/api/v1/token/get"
+        case .sendLivenessVideo: return ""
         }
     }
 
@@ -49,6 +51,7 @@ enum HalykWidgetAuthorizationApi: EndPointProtocol {
         case .rootToken: return .json
         case .publicKey: return .json
         case .tokenPair: return .json
+        case .sendLivenessVideo: return .none
         }
     }
 
@@ -59,6 +62,7 @@ enum HalykWidgetAuthorizationApi: EndPointProtocol {
         case .partnerToken: return .post
         case .rootToken: return .post
         case .tokenPair: return .post
+        case .sendLivenessVideo: return .post
         }
     }
 
@@ -77,6 +81,10 @@ enum HalykWidgetAuthorizationApi: EndPointProtocol {
             var headers = Constants.headers
             headers["X-Partner-Token"] = partnerToken
             return headers
+        case .sendLivenessVideo(let token):
+            var headers = Constants.headers
+            headers["X-Forensic-Access-Token"] = token
+            return headers
         default:
             return Constants.headers
         }
@@ -89,6 +97,7 @@ enum HalykWidgetAuthorizationApi: EndPointProtocol {
         case .rootToken(let info): return encode(info.body)
         case .tokenPair(let body, _): return encode(body)
         case .publicKey: return nil
+        case .sendLivenessVideo: return nil
         }
     }
 }

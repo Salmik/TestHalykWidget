@@ -1,12 +1,15 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name HalykWidget
-import Combine
+import AppTrackingTransparency
+import CoreLocation
 import CryptoKit
 import Foundation
 @_exported import HalykWidget
+import MobileSDK
 import OZLivenessSDK
 import Swift
+import UIKit.UIApplication
 import UIKit.UIColor
 import UIKit.UIDevice
 import UIKit
@@ -19,11 +22,12 @@ import _SwiftConcurrencyShims
   public var processes: [HalykWidget.Processes] {
     get
   }
+  public func logout()
   public func setPartnersInfo(login: Swift.String, password: Swift.String, completion: @escaping ([HalykWidget.Processes]?) -> Swift.Void)
   @objc deinit
 }
 public struct Services : Swift.Decodable {
-  public let processess: [HalykWidget.Processes]?
+  public let processes: [HalykWidget.Processes]?
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct Processes : Swift.Decodable {
@@ -55,7 +59,6 @@ extension HalykWidget.HalykWidgetController {
   @_Concurrency.MainActor @preconcurrency public func loadRequest(_ request: Foundation.URLRequest)
 }
 extension HalykWidget.HalykWidgetController : WebKit.WKNavigationDelegate {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func webView(_ webView: WebKit.WKWebView, didStartProvisionalNavigation navigation: WebKit.WKNavigation!)
 }
 extension HalykWidget.HalykWidgetController {
   @_Concurrency.MainActor @preconcurrency public func webView(_ webView: WebKit.WKWebView, didReceiveAction action: Swift.String)

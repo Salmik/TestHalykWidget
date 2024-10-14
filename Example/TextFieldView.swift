@@ -27,7 +27,7 @@ class TextFieldView: UIView {
         super.init(frame: frame)
 
         addSubview(mainTextField)
-        mainTextField.constrainToEdges(of: self)
+        mainTextField.constraintToEdges(of: self)
         stylyze()
     }
 

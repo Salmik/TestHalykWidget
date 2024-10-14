@@ -13,7 +13,7 @@ class NetworkWorker {
     private lazy var networkManager: NetworkManager = {
         let networkManager = NetworkManager()
         networkManager.isNeedToLogRequests = true
-        networkManager.isSSLPinningEnabled = false
+        networkManager.isSSLPinningEnabled = true
         let bundle = Bundle(identifier: "kz.halyk.partner") ?? .main
         networkManager.certDataItems = bundle.SSLCertificates
         return networkManager

@@ -7,7 +7,6 @@
 
 import UIKit
 import WebKit
-import Combine
 import OZLivenessSDK
 internal import HalykCore
 
@@ -18,12 +17,13 @@ public class HalykWidgetController: UIViewController {
     private let webView = MessageWebView()
     private let viewModel = HalykWidgetViewModel()
     private var ozLivenessVC: UIViewController?
+    private var livenessData: LivenessInfoData?
     private var url: String
 
     public init(url: String = "https://baas-test.halykbank.kz") {
         self.url = url
         super.init(nibName: nil, bundle: nil)
-        // ForenzicConfigurator.configure()
+        ForenzicConfigurator.configure()
     }
 
     override public func viewDidLoad() {
@@ -32,7 +32,6 @@ public class HalykWidgetController: UIViewController {
         setupUI()
         bindViewModel()
         viewModel.prepareRequest(with: url)
-        CommonInformation.shared.logout()
     }
 
     private func setupUI() {
@@ -63,10 +62,11 @@ public class HalykWidgetController: UIViewController {
     }
 
     private func onDeviceLiveness(results: [OZMedia]) {
-        viewModel.analyzeDeviceLiveness(results: results) { [weak self] images in
+        guard let livenessData else { return }
+
+        viewModel.analyzeDeviceLiveness(results: results, with: livenessData) { [weak self] in
             guard let viewController = self else { return }
 
-            viewController.viewModel.makeMultiPartRequest()
             OZSDK.cleanTempDirectory()
             if let ozLivenessVC = viewController.ozLivenessVC {
                 ozLivenessVC.dismiss(animated: true)
@@ -94,26 +94,19 @@ extension HalykWidgetController: HalykWidgetViewModelViewDelegate {
     }
 }
 
-extension HalykWidgetController: WKNavigationDelegate {
-
-    // swiftlint:disable implicitly_unwrapped_optional
-    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if !viewModel.isFirstPage {
-            viewModel.sendInitialPayload(webView: webView)
-            viewModel.isFirstPage = true
-        }
-    }
-}
+extension HalykWidgetController: WKNavigationDelegate {}
 
 extension HalykWidgetController: MessagingWebViewDelegate {
 
     public func webView(_ webView: WKWebView, didReceiveAction action: String) {
-        print(action)
-        guard let action = MessagingWebViewActions(rawValue: action) else { return }
+        guard let webViewAction = MessagingWebViewActions(rawValue: action) else { return }
 
-        switch action {
+        switch webViewAction {
         case .close: dismiss(animated: true)
-        case .liveness: showLivenessPage()
+        case .liveness:
+            guard let livenessData: LivenessInfoData = action.decode() else { return }
+            self.livenessData = livenessData
+            showLivenessPage()
         }
     }
 }

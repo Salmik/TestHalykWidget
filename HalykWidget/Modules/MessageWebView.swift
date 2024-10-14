@@ -6,6 +6,7 @@
 //
 
 import WebKit
+internal import HalykCore
 
 protocol MessagingWebViewDelegate: AnyObject {
 
@@ -16,9 +17,24 @@ class MessageWebView: WKWebView, WKUIDelegate {
 
     weak var messagingDelegate: MessagingWebViewDelegate?
 
+    static var isFirstPage = false
+
     override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         let webConfiguration = WKWebViewConfiguration()
         let contentController = WKUserContentController()
+
+        let userScript = WKUserScript(
+            source: """
+            if (window.__isScriptExecuted !== true) {
+                window.__isScriptExecuted = true;
+                \(Scripts.getInitialPayloadScript())
+            }
+            """,
+            injectionTime: .atDocumentStart,
+            forMainFrameOnly: false
+        )
+        contentController.addUserScript(userScript)
+
         webConfiguration.allowsInlineMediaPlayback = true
         if #available(iOS 15.4, *) {
             webConfiguration.preferences.isElementFullscreenEnabled = true

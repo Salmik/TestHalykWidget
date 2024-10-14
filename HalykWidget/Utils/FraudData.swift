@@ -16,6 +16,7 @@ class FraudDataConfigurator: NSObject {
 
     override init() {
         super.init()
+
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         retriveCurrentLocation()
@@ -33,7 +34,7 @@ class FraudDataConfigurator: NSObject {
         locationManager.requestLocation()
     }
 
-    func makeFraudData() -> String { MobileSDKLib.shared.collectInfo() }
+    static func makeFraudData() -> String { MobileSDKLib.shared.collectInfo() }
 }
 
 extension FraudDataConfigurator: CLLocationManagerDelegate {

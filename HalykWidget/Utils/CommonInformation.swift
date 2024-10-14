@@ -35,7 +35,7 @@ public class CommonInformation {
             let recordsToDelete = records.filter { $0.displayName.contains(domain) }
 
             dataStore.removeData(ofTypes: websiteDataTypes, for: recordsToDelete) {
-                Logger.print("Кэш для \(domain) был очищен.")
+                Logger.print("Кэш для был очищен.")
             }
         }
     }

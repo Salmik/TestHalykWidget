@@ -6,6 +6,7 @@ target 'Example' do
   use_frameworks!
 
   # Pods for Example
+  pod 'OZLivenessSDK', :git => 'https://gitlab.com/oz-forensics/oz-liveness-ios.git', :branch => 'master'
 
 end
 

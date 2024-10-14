@@ -16,6 +16,26 @@
       },
       {
         "kind": "Import",
+        "name": "HalykCore",
+        "printedName": "HalykCore",
+        "declKind": "Import",
+        "moduleName": "HalykWidget",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "HalykWidget",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit.UIColor",
         "printedName": "UIKit.UIColor",
         "declKind": "Import",
@@ -30,6 +50,16 @@
       },
       {
         "kind": "Import",
+        "name": "HalykCore",
+        "printedName": "HalykCore",
+        "declKind": "Import",
+        "moduleName": "HalykWidget",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -37,6 +67,13 @@
         "declAttributes": [
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "HalykWidget"
       },
       {
         "kind": "Import",
@@ -167,6 +204,26 @@
           },
           {
             "kind": "Function",
+            "name": "logout",
+            "printedName": "logout()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11HalykWidget17CommonInformationC6logoutyyF",
+            "mangledName": "$s11HalykWidget17CommonInformationC6logoutyyF",
+            "moduleName": "HalykWidget",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "setPartnersInfo",
             "printedName": "setPartnersInfo(login:password:completion:)",
             "children": [
@@ -274,8 +331,8 @@
         "children": [
           {
             "kind": "Var",
-            "name": "processess",
-            "printedName": "processess",
+            "name": "processes",
+            "printedName": "processes",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -301,8 +358,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:11HalykWidget8ServicesV10processessSayAA9ProcessesVGSgvp",
-            "mangledName": "$s11HalykWidget8ServicesV10processessSayAA9ProcessesVGSgvp",
+            "usr": "s:11HalykWidget8ServicesV9processesSayAA9ProcessesVGSgvp",
+            "mangledName": "$s11HalykWidget8ServicesV9processesSayAA9ProcessesVGSgvp",
             "moduleName": "HalykWidget",
             "declAttributes": [
               "HasStorage",
@@ -340,8 +397,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11HalykWidget8ServicesV10processessSayAA9ProcessesVGSgvg",
-                "mangledName": "$s11HalykWidget8ServicesV10processessSayAA9ProcessesVGSgvg",
+                "usr": "s:11HalykWidget8ServicesV9processesSayAA9ProcessesVGSgvg",
+                "mangledName": "$s11HalykWidget8ServicesV9processesSayAA9ProcessesVGSgvg",
                 "moduleName": "HalykWidget",
                 "implicit": true,
                 "accessorKind": "get"
@@ -711,6 +768,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit.UIApplication",
+        "printedName": "UIKit.UIApplication",
+        "declKind": "Import",
+        "moduleName": "HalykWidget",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -723,13 +790,6 @@
         "kind": "Import",
         "name": "WebKit",
         "printedName": "WebKit",
-        "declKind": "Import",
-        "moduleName": "HalykWidget"
-      },
-      {
-        "kind": "Import",
-        "name": "Combine",
-        "printedName": "Combine",
         "declKind": "Import",
         "moduleName": "HalykWidget"
       },
@@ -1267,53 +1327,6 @@
           {
             "kind": "Function",
             "name": "webView",
-            "printedName": "webView(_:didStartProvisionalNavigation:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "WKWebView",
-                "printedName": "WebKit.WKWebView",
-                "usr": "c:objc(cs)WKWebView"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "ImplicitlyUnwrappedOptional",
-                "printedName": "WebKit.WKNavigation?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "WKNavigation",
-                    "printedName": "WebKit.WKNavigation",
-                    "usr": "c:objc(cs)WKNavigation"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@HalykWidget@objc(cs)HalykWidgetController(im)webView:didStartProvisionalNavigation:",
-            "mangledName": "$s11HalykWidget0aB10ControllerC7webView_29didStartProvisionalNavigationySo05WKWebE0C_So12WKNavigationCSgtF",
-            "moduleName": "HalykWidget",
-            "objc_name": "webView:didStartProvisionalNavigation:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "webView",
             "printedName": "webView(_:didReceiveAction:)",
             "children": [
               {
@@ -1445,12 +1458,32 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "HalykWidget",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "WebKit",
         "printedName": "WebKit",
         "declKind": "Import",
         "moduleName": "HalykWidget",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "HalykCore",
+        "printedName": "HalykCore",
+        "declKind": "Import",
+        "moduleName": "HalykWidget",
+        "declAttributes": [
+          "AccessControl"
         ]
       },
       {
@@ -1589,6 +1622,47 @@
         "declAttributes": [
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "HalykCore",
+        "printedName": "HalykCore",
+        "declKind": "Import",
+        "moduleName": "HalykWidget",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "HalykWidget",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MobileSDK",
+        "printedName": "MobileSDK",
+        "declKind": "Import",
+        "moduleName": "HalykWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "HalykWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "AppTrackingTransparency",
+        "printedName": "AppTrackingTransparency",
+        "declKind": "Import",
+        "moduleName": "HalykWidget"
       },
       {
         "kind": "Import",
@@ -1744,63 +1818,91 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Projects\/HalykWidget\/HalykWidget\/Utils\/CommonInformation.swift",
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Utils\/CommonInformation.swift",
       "kind": "StringLiteral",
-      "offset": 329,
+      "offset": 364,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Projects\/HalykWidget\/HalykWidget\/Utils\/CommonInformation.swift",
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Utils\/CommonInformation.swift",
       "kind": "StringLiteral",
-      "offset": 358,
+      "offset": 393,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Projects\/HalykWidget\/HalykWidget\/Utils\/CommonInformation.swift",
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Utils\/CommonInformation.swift",
       "kind": "Array",
-      "offset": 559,
+      "offset": 594,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Projects\/HalykWidget\/HalykWidget\/Modules\/HalykWidgetController.swift",
-      "kind": "Array",
-      "offset": 509,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Projects\/HalykWidget\/HalykWidget\/Modules\/HalykWidgetController.swift",
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Modules\/HalykWidgetController.swift",
       "kind": "StringLiteral",
-      "offset": 571,
+      "offset": 549,
       "length": 32,
       "value": "\"https:\/\/baas-test.halykbank.kz\""
     },
     {
-      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Projects\/HalykWidget\/HalykWidget\/Modules\/HalykWidgetViewModel.swift",
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Modules\/MessageWebView.swift",
       "kind": "BooleanLiteral",
-      "offset": 404,
+      "offset": 400,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Projects\/HalykWidget\/HalykWidget\/Network Layer\/NetworkWorker.swift",
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Modules\/HalykWidgetViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 397,
+      "offset": 518,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Projects\/HalykWidget\/HalykWidget\/Utils\/Constants.swift",
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Modules\/HalykWidgetViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 568,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Modules\/HalykWidgetViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 757,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Network Layer\/NetworkWorker.swift",
+      "kind": "BooleanLiteral",
+      "offset": 326,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Network Layer\/NetworkWorker.swift",
+      "kind": "BooleanLiteral",
+      "offset": 376,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Network Layer\/NetworkWorker.swift",
+      "kind": "StringLiteral",
+      "offset": 421,
+      "length": 18,
+      "value": "\"kz.halyk.partner\""
+    },
+    {
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 165,
       "length": 80,
       "value": "\"http:\/\/halyk-widget-auth-route-halyk-widget-dmz.apps.baas-test-rz.halykbank.nb\""
     },
     {
-      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Projects\/HalykWidget\/HalykWidget\/Utils\/Constants.swift",
+      "filePath": "\/Users\/zhanibeklukpanov\/Desktop\/Newproject\/HalykWidget\/Utils\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 273,
       "length": 81,
