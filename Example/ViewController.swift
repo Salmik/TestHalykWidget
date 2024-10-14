@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         tableView.constraintToEdges(of: view, safe: true)
         stylyze()
         setActions()
+        showHalykWidgetPage(with: "http://10.25.20.49:5552/auth")
     }
 
     private func stylyze() {
