@@ -126,7 +126,7 @@ class NetworkWorker {
         let response = await networkManager.request(
             HalykWidgetAuthorizationApi.tokenPair(body: tokenBody, partnerToken: fetchedPartnersToken)
         )
-        let tokenPair: TokenPair? = response?.decode()
+        guard let tokenPair: TokenPair = response?.decode() else { return nil }
         CommonInformation.shared.tokenPair = tokenPair
 
         return tokenPair

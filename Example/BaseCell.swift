@@ -29,6 +29,7 @@ class BaseCell: UITableViewCell, ConfigurableCell {
     }
 
     private func stylyze() {
+        backgroundColor = .clear
         label.textColor = .black
     }
 

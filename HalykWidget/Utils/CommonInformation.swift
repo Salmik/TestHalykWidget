@@ -53,7 +53,7 @@ public class CommonInformation {
             await networkWorker.getTokenPair()
 
             if let dictionaries = await networkWorker.getServices() {
-                DispatchQueue.main.async {
+                await MainActor.run {
                     self.processes = dictionaries.processes ?? []
                     completion(dictionaries.processes)
                 }

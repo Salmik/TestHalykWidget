@@ -6,6 +6,7 @@
 //
 
 import UIKit.UIApplication
+internal import HalykCore
 
 struct Scripts {
 
@@ -13,6 +14,7 @@ struct Scripts {
         let safeAreaTop = UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0
         let safeAreaBottom = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
         let fraudData = FraudDataConfigurator.makeFraudData()
+        let deviceId = UIDevice.current.identifierForVendor?.uuidString ?? ""
         let page = "HomePage"
 
         let safePartnerToken = CommonInformation.shared.partnersToken?.replacingOccurrences(of: "'", with: "\\'") ?? ""
@@ -23,11 +25,13 @@ struct Scripts {
         window.HalykWidget = {
             partnerToken: '\(safePartnerToken)',
             fraudData: '\(safeFraudData)',
+            deviceId: '\(deviceId)',
             top: \(safeAreaTop),
             bottom: \(safeAreaBottom),
             page: '\(safePage)'
         };
         """
+        Logger.print(script)
 
         return script
     }

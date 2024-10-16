@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ConfigurableCell {
+protocol ConfigurableCell where Self: UITableViewCell {
     associatedtype DataType
     func configure(with data: DataType)
 }
@@ -18,14 +18,13 @@ protocol CellConfigurator: AnyObject {
     func register(in tableView: UITableView)
 }
 
-class TableCellConfigurator<
-    CellType: ConfigurableCell,
-    DataType
->: CellConfigurator where CellType.DataType == DataType, CellType: UITableViewCell {
+class TableCellConfigurator<CellType: ConfigurableCell, Data>: CellConfigurator where CellType.DataType == Data {
 
-    let item: DataType
+    let item: Data
 
-    init(item: DataType) { self.item = item }
+    init(item: Data) {
+        self.item = item
+    }
 
     static var reuseID: String { String(describing: CellType.self) }
 

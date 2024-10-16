@@ -30,11 +30,9 @@ class ViewController: UIViewController {
         tableView.constraintToEdges(of: view, safe: true)
         stylyze()
         setActions()
-        showHalykWidgetPage(with: "http://10.25.20.49:5552/auth")
     }
 
     private func stylyze() {
-        view.backgroundColor = .white
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         tableView.rowHeight = 56
@@ -47,6 +45,7 @@ class ViewController: UIViewController {
         CommonInformation.shared.setPartnersInfo(login: "gbdq", password: "1234") { [weak self] processes in
             guard let processes else { return }
             self?.processes = processes
+            self?.showHalykWidgetPage(with: "https://baas-test.halykbank.kz/auth")
         }
     }
 

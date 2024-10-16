@@ -142,6 +142,7 @@
 		BBD17DFE2CB65AAE00FCE09C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBD376DA2CB6AD48003613A7 /* ForenzicConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForenzicConfigurator.swift; sourceTree = "<group>"; };
 		BBE6EB7E2C523CB9003E71B7 /* HalykWidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalykWidgetViewModel.swift; sourceTree = "<group>"; };
+		BBE8D9FB2CBE477700653345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBF2B26F2CAE72BC00DF4494 /* ConstantsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsApi.swift; sourceTree = "<group>"; };
 		BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInformation.swift; sourceTree = "<group>"; };
 		BBF2B2822CAEC1FA00DF4494 /* Dictionaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionaries.swift; sourceTree = "<group>"; };
@@ -195,12 +196,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BB0A70612CBF7DEA00084289 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BBAA278D2C5CEC88008AA890 /* MessageWebView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BB1E6BA22C5215F900A8E41D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BB0A70612CBF7DEA00084289 /* View */,
 				BB1E6BA32C52161300A8E41D /* HalykWidgetController.swift */,
 				BBE6EB7E2C523CB9003E71B7 /* HalykWidgetViewModel.swift */,
-				BBAA278D2C5CEC88008AA890 /* MessageWebView.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -244,6 +253,7 @@
 		BB8903122CB555D600982B1B /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				BBE8D9FB2CBE477700653345 /* Info.plist */,
 				BBD17DF42CB65AAE00FCE09C /* AppDelegate.swift */,
 				BBD17DF52CB65AAE00FCE09C /* Assets.xcassets */,
 				BBD17DF82CB65AAE00FCE09C /* Base.lproj */,

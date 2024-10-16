@@ -15,9 +15,14 @@ enum HalykWidgetAuthorizationApi: EndPointProtocol {
     case serverTime
     case partnerToken(login: String, password: String)
     case tokenPair(body: TokenPairBody, partnerToken: String)
-    case sendLivenessVideo(accessToken: String)
+    case sendLivenessVideo(accessToken: String, url: String)
 
-    var baseURL: String { Constants.baseUrl }
+    var baseURL: String {
+        switch self {
+        case .sendLivenessVideo(_, let url): return url
+        default: return Constants.baseUrl
+        }
+    }
 
     var path: String {
         switch self {
@@ -81,7 +86,7 @@ enum HalykWidgetAuthorizationApi: EndPointProtocol {
             var headers = Constants.headers
             headers["X-Partner-Token"] = partnerToken
             return headers
-        case .sendLivenessVideo(let token):
+        case .sendLivenessVideo(let token, _):
             var headers = Constants.headers
             headers["X-Forensic-Access-Token"] = token
             return headers

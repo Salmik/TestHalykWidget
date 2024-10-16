@@ -104,7 +104,7 @@ extension HalykWidgetController: MessagingWebViewDelegate {
         switch webViewAction {
         case .close: dismiss(animated: true)
         case .liveness:
-            guard let livenessData: LivenessInfoData = action.decode() else { return }
+            guard let livenessData: LivenessInfoData = action.decode() else { break }
             self.livenessData = livenessData
             showLivenessPage()
         case .log:
