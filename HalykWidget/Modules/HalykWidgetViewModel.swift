@@ -40,6 +40,7 @@ class HalykWidgetViewModel {
 
     func sendLivenessResult(webView: WKWebView) {
         let script = Scripts.livenessOk()
+        Logger.print(script)
         webView.evaluateJavaScript(script) { (_, error) in
             if let error {
                 Logger.print("Ошибка выполнения скрипта: \(error)")
@@ -77,11 +78,13 @@ class HalykWidgetViewModel {
                 images.append(image)
             }
 
-            if let videoUrl {
-                self?.makeMultiPartRequest(with: videoUrl, and: livenessData) {}
+            guard let videoUrl else {
+                completion()
+                return
             }
-
-            completion()
+            self?.makeMultiPartRequest(with: videoUrl, and: livenessData) {
+                completion()
+            }
         }
     }
 
@@ -92,6 +95,7 @@ class HalykWidgetViewModel {
     ) {
         guard let data = try? Data(contentsOf: videoUrl),
               let url = livenessData.liveness?.url,
+              let authToken = livenessData.liveness?.hbAuth,
               let accessToken = livenessData.liveness?.livenessAuth else {
             return
         }
@@ -102,10 +106,9 @@ class HalykWidgetViewModel {
             mimeType: data.mimeType
         )
         networkManager.multiPart(
-            HalykWidgetAuthorizationApi.sendLivenessVideo(accessToken: accessToken, url: url),
+            HalykWidgetAuthorizationApi.sendLivenessVideo(accessToken: accessToken, authToken: authToken, url: url),
             with: [multipartData]
         ) { response in
-            Logger.print("DONE")
             completion()
         }
     }

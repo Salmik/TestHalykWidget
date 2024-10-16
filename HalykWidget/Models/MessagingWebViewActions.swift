@@ -6,7 +6,6 @@
 //
 
 import Foundation
-internal import HalykCore
 
 enum MessagingWebViewActions: String, CaseIterable {
 

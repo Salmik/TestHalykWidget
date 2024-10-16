@@ -23,8 +23,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Halyk Widget"
-        view.backgroundColor = .white
 
         view.addSubview(tableView)
         tableView.constraintToEdges(of: view, safe: true)
@@ -32,7 +30,15 @@ class ViewController: UIViewController {
         setActions()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // showQRPage()
+    }
+
     private func stylyze() {
+        title = "Halyk Widget"
+        view.backgroundColor = .white
+
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         tableView.rowHeight = 56
@@ -45,14 +51,20 @@ class ViewController: UIViewController {
         CommonInformation.shared.setPartnersInfo(login: "gbdq", password: "1234") { [weak self] processes in
             guard let processes else { return }
             self?.processes = processes
-            self?.showHalykWidgetPage(with: "https://baas-test.halykbank.kz/auth")
+            self?.showHalykWidgetPage(with: "http://10.25.20.49:5552/auth")
         }
     }
 
     private func showHalykWidgetPage(with url: String) {
-        let controller = HalykWidgetController(url: url)
-        controller.modalPresentationStyle = .overFullScreen
-        present(controller, animated: true) { [weak self] in self?.modalPresentationStyle = .automatic }
+        let viewController = HalykWidgetController(url: url)
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true) { [weak self] in self?.modalPresentationStyle = .automatic }
+    }
+
+    private func showQRPage() {
+        let viewController = HalykWidgetQRScannerViewController()
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true) { [weak self] in self?.modalPresentationStyle = .automatic }
     }
 
     private func convert(_ processes: Processes) -> CellConfigurator {

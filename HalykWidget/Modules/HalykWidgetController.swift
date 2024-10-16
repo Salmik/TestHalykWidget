@@ -66,13 +66,34 @@ public class HalykWidgetController: UIViewController {
 
         viewModel.analyzeDeviceLiveness(results: results, with: livenessData) { [weak self] in
             guard let viewController = self else { return }
+            viewController.viewModel.sendLivenessResult(webView: viewController.webView)
 
             OZSDK.cleanTempDirectory()
             if let ozLivenessVC = viewController.ozLivenessVC {
                 ozLivenessVC.dismiss(animated: true)
             }
-            viewController.viewModel.sendLivenessResult(webView: viewController.webView)
         }
+    }
+
+    private func log(_ string: String) -> String? {
+        guard let data = string.data(using: .utf8) else { return nil }
+        return getJsonString(from: data)
+    }
+
+    private func getJsonString(from data: Data) -> String? {
+        let writingOptions: JSONSerialization.WritingOptions = [
+            .fragmentsAllowed,
+            .prettyPrinted,
+            .sortedKeys,
+            .withoutEscapingSlashes
+        ]
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: data),
+              let data = try? JSONSerialization.data(withJSONObject: jsonObject, options: writingOptions),
+              let jsonString = String(data: data, encoding: .utf8) else {
+            return String(data: data, encoding: .utf8)
+        }
+
+        return jsonString.replacingOccurrences(of: "\" : ", with: "\": ", options: .literal)
     }
 
     public required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -104,11 +125,12 @@ extension HalykWidgetController: MessagingWebViewDelegate {
         switch webViewAction {
         case .close: dismiss(animated: true)
         case .liveness:
+            Logger.print(log(action) ?? "")
             guard let livenessData: LivenessInfoData = action.decode() else { break }
             self.livenessData = livenessData
             showLivenessPage()
         case .log:
-            Logger.print(action)
+            Logger.print(log(action) ?? "")
         }
     }
 }
