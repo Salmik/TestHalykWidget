@@ -1,6 +1,0 @@
-framework module HalykWidget {
-  umbrella header "HalykWidget.h"
-  export *
-
-  module * { export * }
-}

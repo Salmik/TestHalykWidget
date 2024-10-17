@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-import Combine
+import OZLivenessSDK
 internal import HalykCore
 
 public enum Flow { case onBoarding, authorization, homepage }
@@ -17,12 +17,13 @@ public class HalykWidgetController: UIViewController {
     private let webView = MessageWebView()
     private let viewModel = HalykWidgetViewModel()
     private var ozLivenessVC: UIViewController?
+    private var livenessData: LivenessInfoData?
     private var url: String
 
     public init(url: String = "https://baas-test.halykbank.kz") {
         self.url = url
         super.init(nibName: nil, bundle: nil)
-        // ForenzicConfigurator.configure()
+        ForenzicConfigurator.configure()
     }
 
     override public func viewDidLoad() {
@@ -31,12 +32,11 @@ public class HalykWidgetController: UIViewController {
         setupUI()
         bindViewModel()
         viewModel.prepareRequest(with: url)
-        CommonInformation.shared.logout()
     }
 
     private func setupUI() {
         view.addSubview(webView)
-        webView.constrainToEdges(of: view)
+        webView.constraintToEdges(of: view)
         view.backgroundColor = .white
         webView.backgroundColor = .clear
     }
@@ -48,43 +48,65 @@ public class HalykWidgetController: UIViewController {
     }
 
     private func showLivenessPage() {
-//        do {
-//            let bundle = Bundle(for: HalykWidgetController.self)
-//
-//            try OZSDK.set(licenseBundle: bundle)
-//            let ozLivenessVC = try OZSDK.createVerificationVCWithDelegate(self, actions: [.selfie])
-//            self.ozLivenessVC = ozLivenessVC
-//            present(ozLivenessVC, animated: true)
-//        } catch {
-//            dump(error)
-//            print("Unable to create OZSDK")
-//        }
+        do {
+            let bundle = Bundle(for: HalykWidgetController.self)
+
+            try OZSDK.set(licenseBundle: bundle)
+            let ozLivenessVC = try OZSDK.createVerificationVCWithDelegate(self, actions: [.selfie])
+            self.ozLivenessVC = ozLivenessVC
+            present(ozLivenessVC, animated: true)
+        } catch {
+            dump(error)
+            Logger.print("Unable to create OZSDK")
+        }
     }
 
-//    private func onDeviceLiveness(results: [OZMedia]) {
-//        viewModel.analyzeDeviceLiveness(results: results) { [weak self] images in
-//            guard let viewController = self else { return }
-//
-//            viewController.viewModel.makeMultiPartRequest()
-//            OZSDK.cleanTempDirectory()
-//            if let ozLivenessVC = viewController.ozLivenessVC {
-//                ozLivenessVC.dismiss(animated: true)
-//            }
-//            viewController.viewModel.sendLivenessResult(webView: viewController.webView)
-//        }
-//    }
+    private func onDeviceLiveness(results: [OZMedia]) {
+        guard let livenessData else { return }
+
+        viewModel.analyzeDeviceLiveness(results: results, with: livenessData) { [weak self] in
+            guard let viewController = self else { return }
+            viewController.viewModel.sendLivenessResult(webView: viewController.webView)
+
+            OZSDK.cleanTempDirectory()
+            if let ozLivenessVC = viewController.ozLivenessVC {
+                ozLivenessVC.dismiss(animated: true)
+            }
+        }
+    }
+
+    private func log(_ string: String) -> String? {
+        guard let data = string.data(using: .utf8) else { return nil }
+        return getJsonString(from: data)
+    }
+
+    private func getJsonString(from data: Data) -> String? {
+        let writingOptions: JSONSerialization.WritingOptions = [
+            .fragmentsAllowed,
+            .prettyPrinted,
+            .sortedKeys,
+            .withoutEscapingSlashes
+        ]
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: data),
+              let data = try? JSONSerialization.data(withJSONObject: jsonObject, options: writingOptions),
+              let jsonString = String(data: data, encoding: .utf8) else {
+            return String(data: data, encoding: .utf8)
+        }
+
+        return jsonString.replacingOccurrences(of: "\" : ", with: "\": ", options: .literal)
+    }
 
     public required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
 
-// extension HalykWidgetController: OZLivenessDelegate {
-//
-//    public func onOZLivenessResult(results: [OZLivenessSDK.OZMedia]) {
-//        onDeviceLiveness(results: results)
-//    }
-//
-//    public func onError(status: OZLivenessSDK.OZVerificationStatus?) {}
-//}
+ extension HalykWidgetController: OZLivenessDelegate {
+
+    public func onOZLivenessResult(results: [OZLivenessSDK.OZMedia]) {
+        onDeviceLiveness(results: results)
+    }
+
+    public func onError(status: OZLivenessSDK.OZVerificationStatus?) {}
+}
 
 extension HalykWidgetController: HalykWidgetViewModelViewDelegate {
 
@@ -93,26 +115,38 @@ extension HalykWidgetController: HalykWidgetViewModelViewDelegate {
     }
 }
 
-extension HalykWidgetController: WKNavigationDelegate {
-
-    // swiftlint:disable implicitly_unwrapped_optional
-    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if !viewModel.isFirstPage {
-            viewModel.sendInitialPayload(webView: webView)
-            viewModel.isFirstPage = true
-        }
-    }
-}
+extension HalykWidgetController: WKNavigationDelegate {}
 
 extension HalykWidgetController: MessagingWebViewDelegate {
 
     public func webView(_ webView: WKWebView, didReceiveAction action: String) {
-        print(action)
-        guard let action = MessagingWebViewActions(rawValue: action) else { return }
+        Logger.print(log(action) ?? "")
+        guard let webViewAction = MessagingWebViewActions(rawValue: action) else { return }
 
-        switch action {
-        case .close: dismiss(animated: true)
-        case .liveness: showLivenessPage()
+        switch webViewAction {
+        case .close:
+            dismiss(animated: true)
+        case .liveness:
+            guard let livenessData: LivenessInfoData = action.decode() else { break }
+
+            self.livenessData = livenessData
+            showLivenessPage()
+        case .onboardingSuccess:
+            guard let onboardingData: OnboardingInfoData = action.decode() else { break }
+            CommonInformation.shared.userName = onboardingData.onboardingSuccess?.user_name
+            CommonInformation.shared.userPassword = onboardingData.onboardingSuccess?.password
+
+            Task(priority: .userInitiated) {
+                await NetworkWorker().getTokenPair()
+                await MainActor.run {
+                    Logger.print(Scripts.onboardingCompleted())
+                    webView.evaluateJavaScript(Scripts.onboardingCompleted()) { _, error in
+                        if let error {
+                            Logger.print("Ошибка выполнения скрипта: \(error)")
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -15,10 +15,15 @@ public class CommonInformation {
     private let networkWorker = NetworkWorker()
     private init() {}
 
+    // Parnters info
     var partnerUserName = ""
     var partnerPassword = ""
-
     var partnersToken: String?
+
+    // For rootToken
+    var userName: String?
+    var userPassword: String?
+
     var serverTime: String?
     var publicKey: String?
     var rootToken: String?
@@ -34,21 +39,27 @@ public class CommonInformation {
             let recordsToDelete = records.filter { $0.displayName.contains(domain) }
 
             dataStore.removeData(ofTypes: websiteDataTypes, for: recordsToDelete) {
-                Logger.print("Кэш для \(domain) был очищен.")
+                Logger.print("Кэш для был очищен.")
             }
         }
     }
 
-    public func logout() { clearCache(for: "baas-test.halykbank.kz") }
+    public func logout() {
+        clearCache(for: "baas-test.halykbank.kz")
+        _ = try? KeychainService().delete(key: KeychainKeys.rootToken)
+    }
 
     public func setPartnersInfo(login: String, password: String, completion: @escaping ([Processes]?) -> Void) {
         Task(priority: .userInitiated) {
-            self.partnersToken = await networkWorker.getPartnerToken(login: login, password: password)
-            self.rootToken = await networkWorker.getRootToken()
-            self.tokenPair = await networkWorker.getTokenPair()
+            CommonInformation.shared.partnerUserName = login
+            CommonInformation.shared.partnerPassword = password
+
+            await networkWorker.getPartnerToken(login: login, password: password)
+            async let _ = await networkWorker.getServerTime()
+            async let _ = await networkWorker.getPublicKey()
 
             if let dictionaries = await networkWorker.getServices() {
-                DispatchQueue.main.async {
+                await MainActor.run {
                     self.processes = dictionaries.processes ?? []
                     completion(dictionaries.processes)
                 }

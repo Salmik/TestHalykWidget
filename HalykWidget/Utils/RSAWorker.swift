@@ -18,6 +18,7 @@ class RSAWorker: RSAService {
     private func extractPublicKey(from publicKey: String) -> String? {
         let pattern: RegularExpression = #"[-]+BEGIN [^-]+[-]+\s*([A-Za-z0-9+/=\s]+?)\s*[-]+END [^-]+[-]+"#
         let key = pattern.firstMatch(in: publicKey, subgroupPosition: 1)
+
         return key?.replacingOccurrences(of: #"\s"#, with: "", options: .regularExpression)
     }
 
@@ -47,8 +48,16 @@ class RSAWorker: RSAService {
         var keySize = SecKeyGetBlockSize(publicKey)
         var keyBuffer = [UInt8](repeating: 0, count: keySize)
 
-        let status = SecKeyEncrypt(publicKey, SecPadding.PKCS1, buffer, buffer.count, &keyBuffer, &keySize)
+        let status = SecKeyEncrypt(
+            publicKey,
+            SecPadding.PKCS1,
+            buffer,
+            buffer.count,
+            &keyBuffer,
+            &keySize
+        )
         guard status == errSecSuccess else { return nil }
+
         return Data(bytes: keyBuffer, count: keySize).base64EncodedString()
     }
 
@@ -57,6 +66,7 @@ class RSAWorker: RSAService {
               let secKey = createPublicKey(from: formattedKey) else {
             return nil
         }
+
         return encryptRSA(string, publicKey: secKey)
     }
 }

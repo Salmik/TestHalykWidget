@@ -9,7 +9,7 @@ import UIKit
 internal import HalykCore
 import HalykWidget
 
-class BaseCell: UITableViewCell, ConfigurableCell {    
+class BaseCell: UITableViewCell, ConfigurableCell {
 
     typealias DataType = Processes
 
@@ -19,7 +19,7 @@ class BaseCell: UITableViewCell, ConfigurableCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         contentView.addSubview(label)
-        label.constrainToEdges(of: contentView, insets: .init(top: 0, left: 8, bottom: 0, right: 8))
+        label.constraintToEdges(of: contentView, insets: .init(top: 0, left: 8, bottom: 0, right: 8))
         stylyze()
     }
 
@@ -29,6 +29,7 @@ class BaseCell: UITableViewCell, ConfigurableCell {
     }
 
     private func stylyze() {
+        backgroundColor = .clear
         label.textColor = .black
     }
 

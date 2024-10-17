@@ -23,17 +23,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Halyk Widget"
-        view.backgroundColor = .white
 
         view.addSubview(tableView)
-        tableView.constrainToEdges(of: view, safe: true)
+        tableView.constraintToEdges(of: view, safe: true)
         stylyze()
         setActions()
     }
 
     private func stylyze() {
+        title = "Halyk Widget"
         view.backgroundColor = .white
+
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         tableView.rowHeight = 56
@@ -43,16 +43,24 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        CommonInformation.shared.setPartnersInfo(login: "gbdq", password: "1234") { [weak self] processes in
+        // https://baas-test.halykbank.kz/auth
+        CommonInformation.shared.setPartnersInfo(login: "test", password: "1234") { [weak self] processes in
+            self?.showHalykWidgetPage(with: "http://10.25.20.49:5552/auth")
             guard let processes else { return }
             self?.processes = processes
         }
     }
 
     private func showHalykWidgetPage(with url: String) {
-        let controller = HalykWidgetController(url: url)
-        controller.modalPresentationStyle = .overFullScreen
-        present(controller, animated: true) { [weak self] in self?.modalPresentationStyle = .automatic }
+        let viewController = HalykWidgetController(url: url)
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true) { [weak self] in self?.modalPresentationStyle = .automatic }
+    }
+
+    private func showQRPage() {
+        let viewController = HalykWidgetQRScannerViewController()
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true) { [weak self] in self?.modalPresentationStyle = .automatic }
     }
 
     private func convert(_ processes: Processes) -> CellConfigurator {
