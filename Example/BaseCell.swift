@@ -9,7 +9,7 @@ import UIKit
 internal import HalykCore
 import HalykWidget
 
-class BaseCell: UITableViewCell, ConfigurableCell {    
+class BaseCell: UITableViewCell, ConfigurableCell {
 
     typealias DataType = Processes
 

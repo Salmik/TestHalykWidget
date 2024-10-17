@@ -1,5 +1,5 @@
 //
-//  Dictionaries.swift
+//  Services.swift
 //  HalykWidget
 //
 //  Created by Zhanibek Lukpanov on 03.10.2024.

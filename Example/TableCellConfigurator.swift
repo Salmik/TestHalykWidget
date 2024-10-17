@@ -1,5 +1,5 @@
 //
-//  TableViewConfigurator.swift
+//  TableCellConfigurator.swift
 //  TestWidget
 //
 //  Created by Zhanibek Lukpanov on 07.10.2024.

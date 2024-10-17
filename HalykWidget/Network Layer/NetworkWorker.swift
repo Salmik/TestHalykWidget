@@ -14,14 +14,15 @@ class NetworkWorker {
         let networkManager = NetworkManager()
         networkManager.isNeedToLogRequests = true
         networkManager.isSSLPinningEnabled = true
-        let bundle = Bundle(identifier: "kz.halyk.partner") ?? .main
-        networkManager.certDataItems = bundle.SSLCertificates
+        networkManager.certDataItems = Bundle(for: NetworkWorker.self).SSLCertificates
         return networkManager
     }()
+
     private let keychainManager = KeychainService()
     private let rsaWorker = RSAWorker()
     private let jsonWorker = JSONWorker()
 
+    @discardableResult
     func getPartnerToken(login: String, password: String) async -> String? {
         let partnerToken = await networkManager.request(
             HalykWidgetAuthorizationApi.partnerToken(login: login, password: password)
@@ -31,6 +32,7 @@ class NetworkWorker {
         return partnerToken
     }
 
+    @discardableResult
     func getServerTime() async -> String? {
         let serverTime = await networkManager.request(
             HalykWidgetAuthorizationApi.serverTime
@@ -40,6 +42,7 @@ class NetworkWorker {
         return serverTime
     }
 
+    @discardableResult
     func getPublicKey() async -> String? {
         guard let partnerToken = CommonInformation.shared.partnersToken else {
             Logger.print("Partner token is not set")
@@ -53,6 +56,7 @@ class NetworkWorker {
         return publicKey
     }
 
+    @discardableResult
     func getRootToken() async -> String? {
         if let data = try? keychainManager.load(key: KeychainKeys.rootToken) {
             let rootToken = String(data: data, encoding: .utf8)
@@ -66,14 +70,17 @@ class NetworkWorker {
 
             let rootModel = RootTokenModel(
                 partnerToken: partnerToken,
-                fingerPrint: DeviceInfoCollector.deviceInfoHash(),
-                body: .init(user_name: "123", password: "123")
+                fingerPrint: "awesome-smartphone-123",
+                body: .init(
+                    user_name: CommonInformation.shared.userName ?? "",
+                    password: CommonInformation.shared.userPassword ?? ""
+                )
             )
             guard let rootToken = await networkManager.request(
                 HalykWidgetAuthorizationApi.rootToken(info: rootModel)
             )?.json?["root_token"] as? String else { return nil }
 
-            let _ = try? keychainManager.save(key: KeychainKeys.rootToken, data: Data(rootToken.utf8))
+            _ = try? keychainManager.save(key: KeychainKeys.rootToken, data: Data(rootToken.utf8))
             CommonInformation.shared.rootToken = rootToken
 
             return rootToken
@@ -116,13 +123,13 @@ class NetworkWorker {
 
         let tokepairBody = TokenPairModel(
             root_token: fetchedRootToken,
-            device_id: DeviceInfoCollector.deviceInfoHash(),
+            device_id: "awesome-smartphone-123",
             expires_at: TimeStampCalculator.callculate(from: fetchedServerTime),
             salt: "Salt"
         )
         let json = jsonWorker.makeJSon(from: tokepairBody)
         let encodedJson = rsaWorker.encrypt(json, publicKey: fetchedPublicKey) ?? ""
-        let tokenBody = TokenPairBody(auth_token: encodedJson, user_name: "User name")
+        let tokenBody = TokenPairBody(auth_token: encodedJson, user_name: CommonInformation.shared.userName ?? "")
         let response = await networkManager.request(
             HalykWidgetAuthorizationApi.tokenPair(body: tokenBody, partnerToken: fetchedPartnersToken)
         )

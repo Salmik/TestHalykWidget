@@ -30,11 +30,6 @@ class ViewController: UIViewController {
         setActions()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        // showQRPage()
-    }
-
     private func stylyze() {
         title = "Halyk Widget"
         view.backgroundColor = .white
@@ -48,10 +43,11 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        CommonInformation.shared.setPartnersInfo(login: "gbdq", password: "1234") { [weak self] processes in
+        // https://baas-test.halykbank.kz/auth
+        CommonInformation.shared.setPartnersInfo(login: "test", password: "1234") { [weak self] processes in
+            self?.showHalykWidgetPage(with: "http://10.25.20.49:5552/auth")
             guard let processes else { return }
             self?.processes = processes
-            self?.showHalykWidgetPage(with: "http://10.25.20.49:5552/auth")
         }
     }
 

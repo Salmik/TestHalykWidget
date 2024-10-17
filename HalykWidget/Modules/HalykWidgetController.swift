@@ -120,17 +120,33 @@ extension HalykWidgetController: WKNavigationDelegate {}
 extension HalykWidgetController: MessagingWebViewDelegate {
 
     public func webView(_ webView: WKWebView, didReceiveAction action: String) {
+        Logger.print(log(action) ?? "")
         guard let webViewAction = MessagingWebViewActions(rawValue: action) else { return }
 
         switch webViewAction {
-        case .close: dismiss(animated: true)
+        case .close:
+            dismiss(animated: true)
         case .liveness:
-            Logger.print(log(action) ?? "")
             guard let livenessData: LivenessInfoData = action.decode() else { break }
+
             self.livenessData = livenessData
             showLivenessPage()
-        case .log:
-            Logger.print(log(action) ?? "")
+        case .onboardingSuccess:
+            guard let onboardingData: OnboardingInfoData = action.decode() else { break }
+            CommonInformation.shared.userName = onboardingData.onboardingSuccess?.user_name
+            CommonInformation.shared.userPassword = onboardingData.onboardingSuccess?.password
+
+            Task(priority: .userInitiated) {
+                await NetworkWorker().getTokenPair()
+                await MainActor.run {
+                    Logger.print(Scripts.onboardingCompleted())
+                    webView.evaluateJavaScript(Scripts.onboardingCompleted()) { _, error in
+                        if let error {
+                            Logger.print("Ошибка выполнения скрипта: \(error)")
+                        }
+                    }
+                }
+            }
         }
     }
 }

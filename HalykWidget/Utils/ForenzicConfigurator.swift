@@ -27,7 +27,7 @@ class ForenzicConfigurator {
             dump(error)
         }
 
-        OZSDK(licenseSources: [.licenseFilePath(path)]) { (result, error) in
+        OZSDK(licenseSources: [.licenseFilePath(path)]) { _, error in
             if let error {
                 Logger.print(error.localizedDescription)
             }

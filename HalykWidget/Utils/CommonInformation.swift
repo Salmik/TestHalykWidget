@@ -20,6 +20,10 @@ public class CommonInformation {
     var partnerPassword = ""
     var partnersToken: String?
 
+    // For rootToken
+    var userName: String?
+    var userPassword: String?
+
     var serverTime: String?
     var publicKey: String?
     var rootToken: String?
@@ -42,7 +46,7 @@ public class CommonInformation {
 
     public func logout() {
         clearCache(for: "baas-test.halykbank.kz")
-        let _ = try? KeychainService().delete(key: KeychainKeys.rootToken)
+        _ = try? KeychainService().delete(key: KeychainKeys.rootToken)
     }
 
     public func setPartnersInfo(login: String, password: String, completion: @escaping ([Processes]?) -> Void) {
@@ -50,7 +54,9 @@ public class CommonInformation {
             CommonInformation.shared.partnerUserName = login
             CommonInformation.shared.partnerPassword = password
 
-            await networkWorker.getTokenPair()
+            await networkWorker.getPartnerToken(login: login, password: password)
+            async let _ = await networkWorker.getServerTime()
+            async let _ = await networkWorker.getPublicKey()
 
             if let dictionaries = await networkWorker.getServices() {
                 await MainActor.run {

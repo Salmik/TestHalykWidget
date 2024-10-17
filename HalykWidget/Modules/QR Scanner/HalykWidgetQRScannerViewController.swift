@@ -51,8 +51,8 @@ public class HalykWidgetQRScannerViewController: UIViewController {
 
         backButton.makeConstraints { button in
             return [
-                backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-                backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16)
+                button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+                button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16)
             ]
         }
         backButton.constraintSize(to: .init(width: 24, height: 24))

@@ -11,7 +11,6 @@ import OZLivenessSDK
 internal import HalykCore
 
 protocol HalykWidgetViewModelViewDelegate: AnyObject {
-
     func loadRequest(_ request: URLRequest)
 }
 
@@ -30,6 +29,17 @@ class HalykWidgetViewModel {
 
     var isFirstPage = false
 
+    var livenessPayloadData: Data? {
+        let jsonObject: [String: Any] = [
+            "media:tags": [
+                "video": ["video_selfie_eyes"]
+            ]
+        ]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted) else {
+            return nil
+        }
+        return jsonData
+    }
 
     func prepareRequest(with url: String) {
         if let url = URL(string: url) {
@@ -41,7 +51,7 @@ class HalykWidgetViewModel {
     func sendLivenessResult(webView: WKWebView) {
         let script = Scripts.livenessOk()
         Logger.print(script)
-        webView.evaluateJavaScript(script) { (_, error) in
+        webView.evaluateJavaScript(script) { _, error in
             if let error {
                 Logger.print("Ошибка выполнения скрипта: \(error)")
             }
@@ -54,7 +64,7 @@ class HalykWidgetViewModel {
         completion: @escaping () -> Void
     ) {
         let analysisRequest = AnalysisRequestBuilder()
-        let analysis = Analysis.init(media: results, type: .quality, mode: .onDevice)
+        let analysis = Analysis(media: results, type: .quality, mode: .onDevice)
         analysisRequest.addAnalysis(analysis)
 
         analysisRequest.run { status in
@@ -94,6 +104,7 @@ class HalykWidgetViewModel {
         completion: @escaping () -> Void
     ) {
         guard let data = try? Data(contentsOf: videoUrl),
+              let payloadData = livenessPayloadData,
               let url = livenessData.liveness?.url,
               let authToken = livenessData.liveness?.hbAuth,
               let accessToken = livenessData.liveness?.livenessAuth else {
@@ -105,10 +116,20 @@ class HalykWidgetViewModel {
             fileName: "video.mp4",
             mimeType: data.mimeType
         )
+        let payload = MultipartFormDataParameter(
+            data: payloadData,
+            name: "payload",
+            fileName: "",
+            mimeType: payloadData.mimeType
+        )
         networkManager.multiPart(
-            HalykWidgetAuthorizationApi.sendLivenessVideo(accessToken: accessToken, authToken: authToken, url: url),
-            with: [multipartData]
-        ) { response in
+            HalykWidgetAuthorizationApi.sendLivenessVideo(
+                accessToken: accessToken,
+                authToken: authToken,
+                url: url
+            ),
+            with: [multipartData, payload]
+        ) { _ in
             completion()
         }
     }

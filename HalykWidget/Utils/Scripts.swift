@@ -14,7 +14,7 @@ struct Scripts {
         let safeAreaTop = UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0
         let safeAreaBottom = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
         let fraudData = FraudDataConfigurator.makeFraudData()
-        let deviceId = UIDevice.current.identifierForVendor?.uuidString ?? ""
+        let deviceId = "awesome-smartphone-123"
         let page = "HomePage"
 
         let safePartnerToken = CommonInformation.shared.partnersToken?.replacingOccurrences(of: "'", with: "\\'") ?? ""
@@ -43,6 +43,22 @@ struct Scripts {
                 status: 'ok'
               }
             }));
+        """
+        return script
+    }
+
+    static func onboardingCompleted() -> String {
+        let accessToken = CommonInformation.shared.tokenPair?.access_token ?? ""
+        let refreshToken = CommonInformation.shared.tokenPair?.refresh_token ?? ""
+        let rootToken = CommonInformation.shared.rootToken ?? ""
+
+        let script = """
+        window.dispatchEvent(new CustomEvent('onboardingCompleted', { detail: {
+                        accessToken: '\(accessToken)',
+                        refreshToken: '\(refreshToken)',
+                        rootToken: '\(rootToken)'
+                      }
+        }))
         """
         return script
     }

@@ -1,5 +1,5 @@
 //
-//  FraudData.swift
+//  FraudDataConfigurator.swift
 //  HalykWidget
 //
 //  Created by Zhanibek Lukpanov on 08.10.2024.
@@ -24,10 +24,10 @@ class FraudDataConfigurator: NSObject {
 
     private func retriveCurrentLocation() {
         let status = CLLocationManager.authorizationStatus()
-        if(status == .denied || status == .restricted) {
+        if status == .denied || status == .restricted {
             return
         }
-        if(status == .notDetermined) {
+        if status == .notDetermined {
             locationManager.requestWhenInUseAuthorization()
             return
         }
@@ -40,7 +40,7 @@ class FraudDataConfigurator: NSObject {
 extension FraudDataConfigurator: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if(status == .authorizedWhenInUse || status == .authorizedAlways) {
+        if status == .authorizedWhenInUse || status == .authorizedAlways {
             manager.requestLocation()
         }
     }

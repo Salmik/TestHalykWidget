@@ -13,6 +13,7 @@
 		BB0A706B2CBF9EFF00084289 /* CameraFocusFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0A706A2CBF9EFF00084289 /* CameraFocusFrameView.swift */; };
 		BB0CC1CB2C9BEBD500B5121D /* HalykCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB0CC1CA2C9BEBD500B5121D /* HalykCore */; };
 		BB1E6BA42C52161300A8E41D /* HalykWidgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E6BA32C52161300A8E41D /* HalykWidgetController.swift */; };
+		BB22011C2CC0CA6700EBAED1 /* OnboardingInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22011B2CC0CA6700EBAED1 /* OnboardingInfoData.swift */; };
 		BB38A46F2CBCDFE800E090B0 /* forensics.license in Resources */ = {isa = PBXBuildFile; fileRef = BB38A46E2CBCDFE800E090B0 /* forensics.license */; };
 		BB3F67C02C897EFA00A61D68 /* DeviceInfoCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F67BF2C897EFA00A61D68 /* DeviceInfoCollector.swift */; };
 		BB3F67C22C897F2100A61D68 /* RSAWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F67C12C897F2100A61D68 /* RSAWorker.swift */; };
@@ -26,7 +27,7 @@
 		BB8903532CB5594800982B1B /* HalykCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB8903522CB5594800982B1B /* HalykCore */; };
 		BB89035B2CB559D200982B1B /* HalykWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */; };
 		BB89035C2CB559D200982B1B /* HalykWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BB8903612CB55E8C00982B1B /* FraudData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8903602CB55E8C00982B1B /* FraudData.swift */; };
+		BB8903612CB55E8C00982B1B /* FraudDataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8903602CB55E8C00982B1B /* FraudDataConfigurator.swift */; };
 		BB8903632CB55FB700982B1B /* MobileSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8903622CB55FB700982B1B /* MobileSDK.xcframework */; };
 		BB8903642CB55FB700982B1B /* MobileSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BB8903622CB55FB700982B1B /* MobileSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BB933AE02C4FC74A0004E7FC /* HalykWidget.docc in Sources */ = {isa = PBXBuildFile; fileRef = BB933ADF2C4FC74A0004E7FC /* HalykWidget.docc */; };
@@ -43,7 +44,7 @@
 		BBD17DFF2CB65AAE00FCE09C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DFB2CB65AAE00FCE09C /* SceneDelegate.swift */; };
 		BBD17E002CB65AAE00FCE09C /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DF92CB65AAE00FCE09C /* BaseCell.swift */; };
 		BBD17E012CB65AAE00FCE09C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DF42CB65AAE00FCE09C /* AppDelegate.swift */; };
-		BBD17E022CB65AAE00FCE09C /* TableViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DFC2CB65AAE00FCE09C /* TableViewConfigurator.swift */; };
+		BBD17E022CB65AAE00FCE09C /* TableCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DFC2CB65AAE00FCE09C /* TableCellConfigurator.swift */; };
 		BBD17E032CB65AAE00FCE09C /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DFD2CB65AAE00FCE09C /* TextFieldView.swift */; };
 		BBD17E042CB65AAE00FCE09C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD17DFE2CB65AAE00FCE09C /* ViewController.swift */; };
 		BBD17E052CB65AAE00FCE09C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD17DF72CB65AAE00FCE09C /* LaunchScreen.storyboard */; };
@@ -52,7 +53,7 @@
 		BBE6EB7F2C523CB9003E71B7 /* HalykWidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6EB7E2C523CB9003E71B7 /* HalykWidgetViewModel.swift */; };
 		BBF2B2702CAE72BC00DF4494 /* ConstantsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B26F2CAE72BC00DF4494 /* ConstantsApi.swift */; };
 		BBF2B2722CAE7A6000DF4494 /* CommonInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */; };
-		BBF2B2832CAEC1FA00DF4494 /* Dictionaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B2822CAEC1FA00DF4494 /* Dictionaries.swift */; };
+		BBF2B2832CAEC1FA00DF4494 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF2B2822CAEC1FA00DF4494 /* Services.swift */; };
 		CC7FA66249A6484CB0E85317 /* Pods_HalykWidget_HalykWidgetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6411F9256D336119C64E4C /* Pods_HalykWidget_HalykWidgetTests.framework */; };
 		E8B24E60B99181DD9F549967 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6675DEEA627C6696CE6F3A27 /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
@@ -115,6 +116,7 @@
 		BB1DBF322CA1E7ED009598E1 /* OZLivenessSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OZLivenessSDK.xcframework; path = Pods/OZLivenessSDK/OZLivenessSDK.xcframework; sourceTree = "<group>"; };
 		BB1DBF342CA1E7ED009598E1 /* TensorFlowLiteC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TensorFlowLiteC.xcframework; path = Pods/TensorFlowLiteC/Frameworks/TensorFlowLiteC.xcframework; sourceTree = "<group>"; };
 		BB1E6BA32C52161300A8E41D /* HalykWidgetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalykWidgetController.swift; sourceTree = "<group>"; };
+		BB22011B2CC0CA6700EBAED1 /* OnboardingInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoData.swift; sourceTree = "<group>"; };
 		BB38A46E2CBCDFE800E090B0 /* forensics.license */ = {isa = PBXFileReference; lastKnownFileType = text; path = forensics.license; sourceTree = "<group>"; };
 		BB3F67BF2C897EFA00A61D68 /* DeviceInfoCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoCollector.swift; sourceTree = "<group>"; };
 		BB3F67C12C897F2100A61D68 /* RSAWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAWorker.swift; sourceTree = "<group>"; };
@@ -124,7 +126,7 @@
 		BB5C46E12CB7F20B00B7C6FB /* Scripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scripts.swift; sourceTree = "<group>"; };
 		BB5C46E32CB7F95600B7C6FB /* LivenessInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivenessInfoData.swift; sourceTree = "<group>"; };
 		BB8903112CB555D600982B1B /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB8903602CB55E8C00982B1B /* FraudData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FraudData.swift; sourceTree = "<group>"; };
+		BB8903602CB55E8C00982B1B /* FraudDataConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FraudDataConfigurator.swift; sourceTree = "<group>"; };
 		BB8903622CB55FB700982B1B /* MobileSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileSDK.xcframework; sourceTree = "<group>"; };
 		BB933ADB2C4FC74A0004E7FC /* HalykWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HalykWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB933ADE2C4FC74A0004E7FC /* HalykWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalykWidget.h; sourceTree = "<group>"; };
@@ -143,7 +145,7 @@
 		BBD17DF62CB65AAE00FCE09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBD17DF92CB65AAE00FCE09C /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		BBD17DFB2CB65AAE00FCE09C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BBD17DFC2CB65AAE00FCE09C /* TableViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewConfigurator.swift; sourceTree = "<group>"; };
+		BBD17DFC2CB65AAE00FCE09C /* TableCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellConfigurator.swift; sourceTree = "<group>"; };
 		BBD17DFD2CB65AAE00FCE09C /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		BBD17DFE2CB65AAE00FCE09C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBD376DA2CB6AD48003613A7 /* ForenzicConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForenzicConfigurator.swift; sourceTree = "<group>"; };
@@ -151,7 +153,7 @@
 		BBE8D9FB2CBE477700653345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBF2B26F2CAE72BC00DF4494 /* ConstantsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsApi.swift; sourceTree = "<group>"; };
 		BBF2B2712CAE7A5F00DF4494 /* CommonInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInformation.swift; sourceTree = "<group>"; };
-		BBF2B2822CAEC1FA00DF4494 /* Dictionaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionaries.swift; sourceTree = "<group>"; };
+		BBF2B2822CAEC1FA00DF4494 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		D548EE844F29ADDA7B91450B /* Pods-HalykWidget-HalykWidgetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalykWidget-HalykWidgetTests.release.xcconfig"; path = "Target Support Files/Pods-HalykWidget-HalykWidgetTests/Pods-HalykWidget-HalykWidgetTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,7 +246,7 @@
 			children = (
 				BBD376DA2CB6AD48003613A7 /* ForenzicConfigurator.swift */,
 				BB3F67BF2C897EFA00A61D68 /* DeviceInfoCollector.swift */,
-				BB8903602CB55E8C00982B1B /* FraudData.swift */,
+				BB8903602CB55E8C00982B1B /* FraudDataConfigurator.swift */,
 				BB3F67C12C897F2100A61D68 /* RSAWorker.swift */,
 				BB9D5DD72CA55DEC0060CEDD /* TimeStampCalculator.swift */,
 				BB9D5DDD2CA55ED70060CEDD /* Constants.swift */,
@@ -260,9 +262,10 @@
 				BB3F67C42C89809300A61D68 /* MessagingWebViewActions.swift */,
 				BB9D5DD92CA55E890060CEDD /* TokenPairModel.swift */,
 				BB9D5DDB2CA55EAE0060CEDD /* RootTokenModel.swift */,
-				BBF2B2822CAEC1FA00DF4494 /* Dictionaries.swift */,
+				BBF2B2822CAEC1FA00DF4494 /* Services.swift */,
 				BB5C46DC2CB7AF9800B7C6FB /* KeychainKeys.swift */,
 				BB5C46E32CB7F95600B7C6FB /* LivenessInfoData.swift */,
+				BB22011B2CC0CA6700EBAED1 /* OnboardingInfoData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,7 +287,7 @@
 				BBD17DF82CB65AAE00FCE09C /* Base.lproj */,
 				BBD17DF92CB65AAE00FCE09C /* BaseCell.swift */,
 				BBD17DFB2CB65AAE00FCE09C /* SceneDelegate.swift */,
-				BBD17DFC2CB65AAE00FCE09C /* TableViewConfigurator.swift */,
+				BBD17DFC2CB65AAE00FCE09C /* TableCellConfigurator.swift */,
 				BBD17DFD2CB65AAE00FCE09C /* TextFieldView.swift */,
 				BBD17DFE2CB65AAE00FCE09C /* ViewController.swift */,
 			);
@@ -411,6 +414,7 @@
 			buildPhases = (
 				B86EA225C78DB91B4E62C18B /* [CP] Check Pods Manifest.lock */,
 				BB933AD62C4FC74A0004E7FC /* Headers */,
+				BB3D80282CC17B75007767EE /* SwiftLint */,
 				BB933AD72C4FC74A0004E7FC /* Sources */,
 				BB933AD82C4FC74A0004E7FC /* Frameworks */,
 				BB933AD92C4FC74A0004E7FC /* Resources */,
@@ -620,6 +624,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BB3D80282CC17B75007767EE /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Проверка архитектуры и добавление пути для Apple Silicon\nif [[ \"$(uname -m)\" == arm64 ]]\nthen\n  export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\n# Проверка наличия SwiftLint и его запуск\nif command -v swiftlint >/dev/null 2>&1\nthen\n  swiftlint --quiet\nelse\n  echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
 		F8D31DB8BF8C42C7A982667B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -647,7 +670,7 @@
 				BBD17DFF2CB65AAE00FCE09C /* SceneDelegate.swift in Sources */,
 				BBD17E002CB65AAE00FCE09C /* BaseCell.swift in Sources */,
 				BBD17E012CB65AAE00FCE09C /* AppDelegate.swift in Sources */,
-				BBD17E022CB65AAE00FCE09C /* TableViewConfigurator.swift in Sources */,
+				BBD17E022CB65AAE00FCE09C /* TableCellConfigurator.swift in Sources */,
 				BBD17E032CB65AAE00FCE09C /* TextFieldView.swift in Sources */,
 				BBD17E042CB65AAE00FCE09C /* ViewController.swift in Sources */,
 			);
@@ -660,18 +683,19 @@
 				BB5C46DD2CB7AF9800B7C6FB /* KeychainKeys.swift in Sources */,
 				BBD376DB2CB6AD48003613A7 /* ForenzicConfigurator.swift in Sources */,
 				BBF2B2722CAE7A6000DF4494 /* CommonInformation.swift in Sources */,
-				BBF2B2832CAEC1FA00DF4494 /* Dictionaries.swift in Sources */,
+				BBF2B2832CAEC1FA00DF4494 /* Services.swift in Sources */,
 				BB0A706B2CBF9EFF00084289 /* CameraFocusFrameView.swift in Sources */,
 				BB5C46E22CB7F20B00B7C6FB /* Scripts.swift in Sources */,
 				BB1E6BA42C52161300A8E41D /* HalykWidgetController.swift in Sources */,
 				BB933AE02C4FC74A0004E7FC /* HalykWidget.docc in Sources */,
+				BB22011C2CC0CA6700EBAED1 /* OnboardingInfoData.swift in Sources */,
 				BB5C46E42CB7F95600B7C6FB /* LivenessInfoData.swift in Sources */,
 				BBAA278E2C5CEC88008AA890 /* MessageWebView.swift in Sources */,
 				BBE6EB7F2C523CB9003E71B7 /* HalykWidgetViewModel.swift in Sources */,
 				BB9D5DDA2CA55E890060CEDD /* TokenPairModel.swift in Sources */,
 				BB9D5DE22CA55FB90060CEDD /* NetworkWorker.swift in Sources */,
 				BB3F67C52C89809300A61D68 /* MessagingWebViewActions.swift in Sources */,
-				BB8903612CB55E8C00982B1B /* FraudData.swift in Sources */,
+				BB8903612CB55E8C00982B1B /* FraudDataConfigurator.swift in Sources */,
 				BB3F67C22C897F2100A61D68 /* RSAWorker.swift in Sources */,
 				BB9D5DD82CA55DEC0060CEDD /* TimeStampCalculator.swift in Sources */,
 				BB0A70662CBF9DEB00084289 /* HalykWidgetQRScannerViewController.swift in Sources */,

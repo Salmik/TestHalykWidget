@@ -9,8 +9,8 @@ import Foundation
 
 public struct TokenPair: Decodable {
 
-    let access_token: String
-    let refresh_token: String
+    let access_token: String?
+    let refresh_token: String?
 }
 
 struct TokenPairModel: Encodable {
